@@ -73,8 +73,74 @@ For questions related to the **ro_query** database,
 | 378304 | 351330448 | Big Brothers Big Sisters | 2015 |  353120 |   304867 | Help children to reach their potential through professional supports | P00932103 | Dana Bement | Bloomington | IN    | https://s3.amazonaws.com/irs-form-990/201642289349303444_public.xml |
 +--------+-----------+--------------------------+------+---------+----------+----------------------------------------------------------------------+-----------+-------------+-------------+-------+---------------------------------------------------------------------+
 ```
+   * Using the query `select id, name, (revenue-expenses) as net_income from taxdata order by RAND() limit 50;`, we can get a list of 50 companies at random with their net income as follows:  
+```
++--------+-------------------------------------------------------------------------------+------------+
+| id     | name                                                                          | net_income |
++--------+-------------------------------------------------------------------------------+------------+
+|  10963 | RACINEKENOSHA COMMUNITY ACTION AGENCY INC                                     |    -155856 |
+| 240951 | WE CARE JACKSONVILLE INC                                                      |     -90650 |
+| 132184 | PTA NEVADA CONGRESS FRANK LAMPING PTA                                         |       4148 |
+| 266803 | CONNECTING ANGELS INC                                                         |       -595 |
+| 228252 | DARE TO BE DIFFERENT INC                                                      |      10231 |
+|  24890 | VESTAL CENTER SOCIAL CLUB INC                                                 |       2826 |
+| 365484 | HIDDEN LAKE BRIGADE CAMP                                                      |         50 |
+| 179673 | Boulevard Heights Mutual Water Companyco Eugene Burger Management Corporation |      -5304 |
+| 160577 | Leslie Edgar Etchason VFW Post 3999                                           |     340674 |
+| 337244 | San Antonio Alternative Housing Corporation No 06                             |   13869750 |
+|  35289 | YORKTOWN COMMUNITY NURSERY SCHOOL                                             |       1314 |
+| 203609 | DIVINE WILL FOUNDATION                                                        |     162890 |
+| 315573 | JILL KNUTE WILDCAT SPIRITSCHOLARSHIP FOUNDATION                               |          0 |
+|  43510 | Animal Welfare Society of Monroe                                              |      87952 |
+| 115129 | FAITH OUTREACH MINISTRIESD/B/A SPIRIT LIFE                                    |      -3092 |
+| 304631 | UTILITY WORKERS OF AMERICAAFL-CIO LU 409                                      |      21119 |
+| 307330 | AMERICAN PAYROLL ASSN OF ACADIANA LLC                                         |          0 |
+| 201055 | NATL ASSOC OF LETTER CARRIERS BRANCH 46                                       |      38276 |
+| 146953 | THE CLARK MANOR HOUSE                                                         |          0 |
+| 135077 | KEVIN & THERESE GLASSMAN FOUNDATION                                           |          0 |
+| 229009 | SUNSET ELEMENTARY SCHOOL PTA                                                  |     -64183 |
+| 246691 | LEFKOVITS FAMILY FOUNDATION                                                   |          0 |
+|  53621 | CROSSLINES OF MCDONALD CO INC                                                 |      10167 |
+| 290221 | CANINE ASSISTED THERAPY INC                                                   |      25196 |
+| 250834 | HARRUB CHFIRST BAPTIST CH WTBY                                                |          0 |
+|  53181 | BIRDSBORO POST OF THE AMERICANLEGION INC                                      |     152717 |
+| 361019 | Weekes House Inc                                                              |      19419 |
+| 368740 | Autumn's Dawn                                                                 |     -58622 |
+| 333643 | JOINING OUR YOUTH INC                                                         |     -15823 |
+|  17343 | AMERICAN LEGION POST 177 INCORPORATED                                         |      83005 |
+| 239656 | CHILDFUND INTERNATIONAL USA                                                   |    8695209 |
+| 302426 | Purple Silk Music Education Foundation                                        |       2330 |
+| 362902 | THE SERGEANT THOMAS JOSEPH SULLIVAN CENTER                                    |     -44922 |
+| 157702 | THOMAS B JELKE FOUNDATION                                                     |          0 |
+|  49648 | KNOX COUNTY VOLUNTEERS OF AMERICACANDLERIDGE PLAZA                            |      14778 |
+| 160648 | Dawn of Hope Inc                                                              |     217816 |
+| 205917 | THE ECCLES FAMILY FOUNDATION                                                  |          0 |
+|  81039 | GIRLS INCORPORATED OF OAK RIDGE                                               |      51759 |
+| 199486 | THE LOFT                                                                      |      -1000 |
+| 247809 | SOGG FOUNDATION INCC/O CAROL S MARKEY                                         |          0 |
+| 155641 | UNION LABEL & SERVICE TRADES DEPARTMENT AFL-CIO                               |       9128 |
+| 365177 | MERRILL CHARITABLE FOUNDATION                                                 |          0 |
+| 285201 | WOODLAND MOOSE LODGE 2394                                                     |     299116 |
+| 179953 | DUKES HEALTH CARE FOUNDATION OFMIAMI COUNTY INC                               |          0 |
+|  49738 | Missouri School Boards EducationalFoundation                                  |      13265 |
+| 122639 | Family Resource Network Inc                                                   |      17014 |
+| 242552 | RALPH TILLMAN AND REBA DANIEL FERRELL FAMILY FOUNDATION                       |          0 |
+| 325442 | FRIENDS OF THE ISRAEL CENTER FORSOCIAL AND ECONOMIC PROGRESS                  |    -100572 |
+| 160526 | ALEXANDRIA LACROSSE CLUB INC                                                  |      12878 |
+|  87604 | REBECCA STEINDECKER CHARITABLE TRUST                                          |          0 |
++--------+-------------------------------------------------------------------------------+------------+
+```
+
+This task takes me about 4 hours to complete.
+
+Best regards,
+Xinhao(Theo) Liao
+
+--
+<span style="color:blue">Documentations</span>
 
 
+<span style="color:blue">Database operation records</span>
 ```
 mysql> select (30000000-15210000)/7;
 +-----------------------+
@@ -381,5 +447,62 @@ mysql> select * from taxdata order by id desc limit 1;
 | 378304 | 351330448 | Big Brothers Big Sisters | 2015 |  353120 |   304867 | Help children to reach their potential through professional supports | P00932103 | Dana Bement | Bloomington | IN    | https://s3.amazonaws.com/irs-form-990/201642289349303444_public.xml |
 +--------+-----------+--------------------------+------+---------+----------+----------------------------------------------------------------------+-----------+-------------+-------------+-------+---------------------------------------------------------------------+
 1 row in set (0.03 sec)
+
+mysql> select id, name, (revenue-expenses) as net_income from taxdata order by RAND() limit 50;
++--------+-------------------------------------------------------------------------------+------------+
+| id     | name                                                                          | net_income |
++--------+-------------------------------------------------------------------------------+------------+
+|  10963 | RACINEKENOSHA COMMUNITY ACTION AGENCY INC                                     |    -155856 |
+| 240951 | WE CARE JACKSONVILLE INC                                                      |     -90650 |
+| 132184 | PTA NEVADA CONGRESS FRANK LAMPING PTA                                         |       4148 |
+| 266803 | CONNECTING ANGELS INC                                                         |       -595 |
+| 228252 | DARE TO BE DIFFERENT INC                                                      |      10231 |
+|  24890 | VESTAL CENTER SOCIAL CLUB INC                                                 |       2826 |
+| 365484 | HIDDEN LAKE BRIGADE CAMP                                                      |         50 |
+| 179673 | Boulevard Heights Mutual Water Companyco Eugene Burger Management Corporation |      -5304 |
+| 160577 | Leslie Edgar Etchason VFW Post 3999                                           |     340674 |
+| 337244 | San Antonio Alternative Housing Corporation No 06                             |   13869750 |
+|  35289 | YORKTOWN COMMUNITY NURSERY SCHOOL                                             |       1314 |
+| 203609 | DIVINE WILL FOUNDATION                                                        |     162890 |
+| 315573 | JILL KNUTE WILDCAT SPIRITSCHOLARSHIP FOUNDATION                               |          0 |
+|  43510 | Animal Welfare Society of Monroe                                              |      87952 |
+| 115129 | FAITH OUTREACH MINISTRIESD/B/A SPIRIT LIFE                                    |      -3092 |
+| 304631 | UTILITY WORKERS OF AMERICAAFL-CIO LU 409                                      |      21119 |
+| 307330 | AMERICAN PAYROLL ASSN OF ACADIANA LLC                                         |          0 |
+| 201055 | NATL ASSOC OF LETTER CARRIERS BRANCH 46                                       |      38276 |
+| 146953 | THE CLARK MANOR HOUSE                                                         |          0 |
+| 135077 | KEVIN & THERESE GLASSMAN FOUNDATION                                           |          0 |
+| 229009 | SUNSET ELEMENTARY SCHOOL PTA                                                  |     -64183 |
+| 246691 | LEFKOVITS FAMILY FOUNDATION                                                   |          0 |
+|  53621 | CROSSLINES OF MCDONALD CO INC                                                 |      10167 |
+| 290221 | CANINE ASSISTED THERAPY INC                                                   |      25196 |
+| 250834 | HARRUB CHFIRST BAPTIST CH WTBY                                                |          0 |
+|  53181 | BIRDSBORO POST OF THE AMERICANLEGION INC                                      |     152717 |
+| 361019 | Weekes House Inc                                                              |      19419 |
+| 368740 | Autumn's Dawn                                                                 |     -58622 |
+| 333643 | JOINING OUR YOUTH INC                                                         |     -15823 |
+|  17343 | AMERICAN LEGION POST 177 INCORPORATED                                         |      83005 |
+| 239656 | CHILDFUND INTERNATIONAL USA                                                   |    8695209 |
+| 302426 | Purple Silk Music Education Foundation                                        |       2330 |
+| 362902 | THE SERGEANT THOMAS JOSEPH SULLIVAN CENTER                                    |     -44922 |
+| 157702 | THOMAS B JELKE FOUNDATION                                                     |          0 |
+|  49648 | KNOX COUNTY VOLUNTEERS OF AMERICACANDLERIDGE PLAZA                            |      14778 |
+| 160648 | Dawn of Hope Inc                                                              |     217816 |
+| 205917 | THE ECCLES FAMILY FOUNDATION                                                  |          0 |
+|  81039 | GIRLS INCORPORATED OF OAK RIDGE                                               |      51759 |
+| 199486 | THE LOFT                                                                      |      -1000 |
+| 247809 | SOGG FOUNDATION INCC/O CAROL S MARKEY                                         |          0 |
+| 155641 | UNION LABEL & SERVICE TRADES DEPARTMENT AFL-CIO                               |       9128 |
+| 365177 | MERRILL CHARITABLE FOUNDATION                                                 |          0 |
+| 285201 | WOODLAND MOOSE LODGE 2394                                                     |     299116 |
+| 179953 | DUKES HEALTH CARE FOUNDATION OFMIAMI COUNTY INC                               |          0 |
+|  49738 | Missouri School Boards EducationalFoundation                                  |      13265 |
+| 122639 | Family Resource Network Inc                                                   |      17014 |
+| 242552 | RALPH TILLMAN AND REBA DANIEL FERRELL FAMILY FOUNDATION                       |          0 |
+| 325442 | FRIENDS OF THE ISRAEL CENTER FORSOCIAL AND ECONOMIC PROGRESS                  |    -100572 |
+| 160526 | ALEXANDRIA LACROSSE CLUB INC                                                  |      12878 |
+|  87604 | REBECCA STEINDECKER CHARITABLE TRUST                                          |          0 |
++--------+-------------------------------------------------------------------------------+------------+
+50 rows in set (0.53 sec)
 
 ```
