@@ -4,7 +4,7 @@
 
 Hi Kelly,  
 
-I have checked the data can answer these questions now. The query records and documentations I created are appended in the end.  
+I have checked the data can answer these questions now. The query records are appended in the end and the documentations I created is appended in *documentation.pdf*.  
 
 Each investor will pay about $2112857.1429.
 
@@ -137,9 +137,6 @@ Best regards,
 Xinhao(Theo) Liao
 
 --
-<span style="color:blue">Documentations</span>
-
-
 <span style="color:blue">Database operation records</span>
 ```
 mysql> select (30000000-15210000)/7;
@@ -504,5 +501,166 @@ mysql> select id, name, (revenue-expenses) as net_income from taxdata order by R
 |  87604 | REBECCA STEINDECKER CHARITABLE TRUST                                          |          0 |
 +--------+-------------------------------------------------------------------------------+------------+
 50 rows in set (0.53 sec)
+mysql> desc taxdata;
++----------+--------------+------+-----+---------+----------------+
+| Field    | Type         | Null | Key | Default | Extra          |
++----------+--------------+------+-----+---------+----------------+
+| id       | int(11)      | NO   | PRI | NULL    | auto_increment |
+| ein      | int(11)      | YES  |     | NULL    |                |
+| name     | varchar(255) | YES  |     | NULL    |                |
+| year     | int(11)      | YES  |     | NULL    |                |
+| revenue  | bigint(20)   | YES  |     | NULL    |                |
+| expenses | bigint(20)   | YES  |     | NULL    |                |
+| purpose  | text         | YES  |     | NULL    |                |
+| ptid     | varchar(255) | YES  |     | NULL    |                |
+| ptname   | varchar(255) | YES  |     | NULL    |                |
+| city     | varchar(255) | YES  |     | NULL    |                |
+| state    | varchar(255) | YES  |     | NULL    |                |
+| url      | varchar(255) | YES  |     | NULL    |                |
++----------+--------------+------+-----+---------+----------------+
+12 rows in set (0.02 sec)
 
+mysql> select * from taxdata order by rand() limit 1;
++--------+-----------+---------------------------------------------------+------+---------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+------------------+-------------+-------+---------------------------------------------------------------------+
+| id     | ein       | name                                              | year | revenue | expenses | purpose                                                                                                                                                                                                                                                                                                          | ptid      | ptname           | city        | state | url                                                                 |
++--------+-----------+---------------------------------------------------+------+---------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+------------------+-------------+-------+---------------------------------------------------------------------+
+| 143266 | 850457178 | JEWISH COMMUNITY CENTER OF GREATERALBUQUERQUE INC | 2014 | 3606340 |  3626307 | THE PURPOSE OF THE JEWISH COMMUNITY CENTER OF GREATER ALBUQUERQUE, INC. IS TO PROVIDE A PLACE WHERE ALL CAN CONNECT WITH JEWISH LIFE, TO PERPETUATE, STRENGTHEN, AND SERVE THE JEWISH COMMUNITY, AND TO PROVIDE CULTURAL, EDUCATIONAL, SOCIAL, AND RECREATIONAL ACTIVITIES FOR THE JEWISH AND GENERAL COMMUNITY. | P00012198 | GARY KISSOCK CPA | ALBUQUERQUE | NM    | https://s3.amazonaws.com/irs-form-990/201610959349300921_public.xml |
++--------+-----------+---------------------------------------------------+------+---------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+------------------+-------------+-------+---------------------------------------------------------------------+
+1 row in set (2.23 sec)
+
+mysql> use ro_company1;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++-----------------------+
+| Tables_in_ro_company1 |
++-----------------------+
+| account               |
+| branch                |
+| business              |
+| customer              |
+| department            |
+| employee              |
+| individual            |
+| officer               |
+| product               |
+| product_type          |
+| transaction           |
++-----------------------+
+11 rows in set (0.03 sec)
+
+mysql> desc account;
++--------------------+----------------------------------+------+-----+---------+----------------+
+| Field              | Type                             | Null | Key | Default | Extra          |
++--------------------+----------------------------------+------+-----+---------+----------------+
+| account_id         | int(10) unsigned                 | NO   | PRI | NULL    | auto_increment |
+| product_cd         | varchar(10)                      | NO   | MUL | NULL    |                |
+| cust_id            | int(10) unsigned                 | NO   | MUL | NULL    |                |
+| open_date          | date                             | NO   |     | NULL    |                |
+| close_date         | date                             | YES  |     | NULL    |                |
+| last_activity_date | date                             | YES  |     | NULL    |                |
+| status             | enum('ACTIVE','CLOSED','FROZEN') | YES  |     | NULL    |                |
+| open_branch_id     | smallint(5) unsigned             | YES  | MUL | NULL    |                |
+| open_emp_id        | smallint(5) unsigned             | YES  | MUL | NULL    |                |
+| avail_balance      | float(10,2)                      | YES  |     | NULL    |                |
+| pending_balance    | float(10,2)                      | YES  |     | NULL    |                |
++--------------------+----------------------------------+------+-----+---------+----------------+
+11 rows in set (0.03 sec)
+
+mysql> select * from account order by rand() limit 1;
++------------+------------+---------+------------+------------+--------------------+--------+----------------+-------------+---------------+-----------------+
+| account_id | product_cd | cust_id | open_date  | close_date | last_activity_date | status | open_branch_id | open_emp_id | avail_balance | pending_balance |
++------------+------------+---------+------------+------------+--------------------+--------+----------------+-------------+---------------+-----------------+
+|          4 | CHK        |       2 | 2001-03-12 | NULL       | 2004-12-27         | ACTIVE |              2 |          10 |       2258.02 |         2258.02 |
++------------+------------+---------+------------+------------+--------------------+--------+----------------+-------------+---------------+-----------------+
+1 row in set (0.03 sec)
+
+mysql> desc employee;
++--------------------+----------------------+------+-----+---------+----------------+
+| Field              | Type                 | Null | Key | Default | Extra          |
++--------------------+----------------------+------+-----+---------+----------------+
+| emp_id             | smallint(5) unsigned | NO   | PRI | NULL    | auto_increment |
+| fname              | varchar(20)          | NO   |     | NULL    |                |
+| lname              | varchar(20)          | NO   |     | NULL    |                |
+| start_date         | date                 | NO   |     | NULL    |                |
+| end_date           | date                 | YES  |     | NULL    |                |
+| superior_emp_id    | smallint(5) unsigned | YES  | MUL | NULL    |                |
+| dept_id            | smallint(5) unsigned | YES  | MUL | NULL    |                |
+| title              | varchar(20)          | YES  |     | NULL    |                |
+| assigned_branch_id | smallint(5) unsigned | YES  | MUL | NULL    |                |
++--------------------+----------------------+------+-----+---------+----------------+
+9 rows in set (0.03 sec)
+
+mysql> select * from employee order by rand() limit 1;
++--------+---------+---------+------------+----------+-----------------+---------+-------------+--------------------+
+| emp_id | fname   | lname   | start_date | end_date | superior_emp_id | dept_id | title       | assigned_branch_id |
++--------+---------+---------+------------+----------+-----------------+---------+-------------+--------------------+
+|     16 | Theresa | Markham | 2001-03-15 | NULL     |               4 |       1 | Head Teller |                  4 |
++--------+---------+---------+------------+----------+-----------------+---------+-------------+--------------------+
+1 row in set (0.02 sec)
+
+mysql> desc transaction;
++---------------------+----------------------+------+-----+---------+----------------+
+| Field               | Type                 | Null | Key | Default | Extra          |
++---------------------+----------------------+------+-----+---------+----------------+
+| txn_id              | int(10) unsigned     | NO   | PRI | NULL    | auto_increment |
+| txn_date            | datetime             | NO   |     | NULL    |                |
+| account_id          | int(10) unsigned     | NO   | MUL | NULL    |                |
+| txn_type_cd         | enum('DBT','CDT')    | YES  |     | NULL    |                |
+| amount              | double(10,2)         | NO   |     | NULL    |                |
+| teller_emp_id       | smallint(5) unsigned | YES  | MUL | NULL    |                |
+| execution_branch_id | smallint(5) unsigned | YES  | MUL | NULL    |                |
+| funds_avail_date    | datetime             | YES  |     | NULL    |                |
++---------------------+----------------------+------+-----+---------+----------------+
+8 rows in set (0.02 sec)
+
+mysql> select * from transaction order by rand() limit 1;
++--------+---------------------+------------+-------------+--------+---------------+---------------------+---------------------+
+| txn_id | txn_date            | account_id | txn_type_cd | amount | teller_emp_id | execution_branch_id | funds_avail_date    |
++--------+---------------------+------------+-------------+--------+---------------+---------------------+---------------------+
+|      5 | 2001-03-12 00:00:00 |          5 | CDT         | 100.00 |          NULL |                NULL | 2001-03-12 00:00:00 |
++--------+---------------------+------------+-------------+--------+---------------+---------------------+---------------------+
+1 row in set (0.02 sec)
+
+mysql> desc product_type;
++-----------------+-------------+------+-----+---------+-------+
+| Field           | Type        | Null | Key | Default | Extra |
++-----------------+-------------+------+-----+---------+-------+
+| product_type_cd | varchar(10) | NO   | PRI | NULL    |       |
+| name            | varchar(50) | NO   |     | NULL    |       |
++-----------------+-------------+------+-----+---------+-------+
+2 rows in set (0.03 sec)
+
+mysql> select * from product_type;
++-----------------+-------------------------------+
+| product_type_cd | name                          |
++-----------------+-------------------------------+
+| ACCOUNT         | Customer Accounts             |
+| INSURANCE       | Insurance Offerings           |
+| LOAN            | Individual and Business Loans |
++-----------------+-------------------------------+
+3 rows in set (0.03 sec)
+
+mysql> desc branch;
++-----------+----------------------+------+-----+---------+----------------+
+| Field     | Type                 | Null | Key | Default | Extra          |
++-----------+----------------------+------+-----+---------+----------------+
+| branch_id | smallint(5) unsigned | NO   | PRI | NULL    | auto_increment |
+| name      | varchar(20)          | NO   |     | NULL    |                |
+| address   | varchar(30)          | YES  |     | NULL    |                |
+| city      | varchar(20)          | YES  |     | NULL    |                |
+| state     | varchar(2)           | YES  |     | NULL    |                |
+| zip       | varchar(12)          | YES  |     | NULL    |                |
++-----------+----------------------+------+-----+---------+----------------+
+6 rows in set (0.02 sec)
+
+mysql> select * from branch order by rand() limit 1;
++-----------+---------------+-----------------+-------+-------+-------+
+| branch_id | name          | address         | city  | state | zip   |
++-----------+---------------+-----------------+-------+-------+-------+
+|         4 | So. NH Branch | 378 Maynard Ln. | Salem | NH    | 03079 |
++-----------+---------------+-----------------+-------+-------+-------+
+1 row in set (0.02 sec)
 ```
