@@ -17,6 +17,7 @@ For questions related to the **ro_company1** dataset,
   2) Employee ID 1 started working at the company from 2001-06-22.  
 * For data on the company's transaction history and their products, the required query could be  
 `select txn_date, account_id from transaction order by txn_date desc, account_id;`, which gives the result    
+
 ```
 +---------------------+------------+
 | txn_date            | account_id |
@@ -44,11 +45,13 @@ For questions related to the **ro_company1** dataset,
 | 2000-01-15 00:00:00 |         11 |  
 +---------------------+------------+   
 ```
+
 * The primary key in the transaction table is *txn_id*.  
 * The unique product types offered are *Customer Accounts*, *Insurance Offerings*, and *Individual and Business Loans*.  
 * For information related to different company divisions:  
   * 3 branches are located in MA.  
-  * The required query could be `select name, address, zip, NOW() as querytime from branch;`, which gives the result  
+  * The required query could be `select name, address, zip, NOW() as querytime from branch;`, which gives the result   
+
 ```
 +---------------+----------------------+-------+---------------------+
 | name          | address              | zip   | querytime           |
@@ -66,11 +69,13 @@ For questions related to the **ro_query** database,
   * The PTID are actually Preparer Tax Identification Number (PTIN) issued by Internal Revenue Service (IRS), which is used as the tax return preparer's identification number.  
   * EIN should be the Employer Identification Number assigned by IRS to business entities for identification in tax reporting.  
   * Using the query `select * from taxdata order by id desc limit 1;`, we can get the last entry in the taxdata table as follows:  
+
 ```
 +--------+-----------+--------------------------+------+---------+----------+--------------------------  
 --------------------------------------------+-----------+-------------+-------------+-------+----------  
 -----------------------------------------------------------+
-| id     | ein       | name                     | year | revenue | expenses | purpose                                                              | ptid      | ptname      | city        | state | url                                         
+| id     | ein       | name                     | year | revenue | expenses | purpose       
+| ptid      | ptname      | city        | state | url                                         
 |
 +--------+-----------+--------------------------+------+---------+----------+---------------------------  
 -------------------------------------------+-----------+-------------+-------------+-------+------------  
