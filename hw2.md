@@ -4,7 +4,7 @@
 
 Hi Kelly,  
 
-I have checked the data can answer these questions now. The query records are appended in the end and the documentations I created is appended in *documentation.pdf*.  
+I have checked the data and am able to answer these questions now. The query records are appended in the end and the documentations I created is appended in *documentation.pdf*.  
 
 Each investor will pay about $2112857.1429.
 
