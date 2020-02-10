@@ -4,7 +4,7 @@
 
 Hi Raj,  
 
-I have checked the database and am able to answer these questions now. The query records are appended in the end and the documentations I created is appended in documentation.pdf.  
+I have checked the database and am able to answer these questions now. The query records are appended in the end. The code for querying tweet data is appended in *tweet.py*. And the updated documentation is appended in *documentation.pdf*.  
 
 For question about revenue,  
 * 245 Ann Arbor-based companies (rows) are listed in the database in 2014.  
@@ -215,7 +215,7 @@ For employee's data,
 +-------------+-------------+
 ```
 
-The 20 randomly selected tweets are obtained from the code in *.py* and given as below.
+The 20 randomly selected tweets are obtained from the code in *tweets.py* and given as below.  
 ```
 ['Congrats Sindu Giri 👏\n#umsialumni https://t.co/O9vSib7beB', 1]
 ['Q3: How will the idea of traditional learning shift?', 0]
@@ -237,9 +237,17 @@ The 20 randomly selected tweets are obtained from the code in *.py* and given as
 ['RT @sdemonner: Anthony Whyte sharing his experience as a Lecturer for the @umsi SI 664 course this Fall with the ITS Teaching &amp; Learning te…', 5]
 ['RT @an_dre_a_: My awesome ta got me a document for Christmas ❤️ https://t.co/pt3ogiRzpt', 1]
 ['@uofmbec @UMengineering @UMich @michigan_AI @UMRobotics @UMichResearch 👏👏👏', 0]
-```
+```  
 
+And for the last three questions,  
+1) There will be ProgrammingError when there's something wrong in programming in MySQL. For instance, when using a table that is not found. DataError occurs when something goes wrong about data processing. For instance, when a number is divided by 0.  
+2) Lists will be returned by **fetch all**.  
+3) We should close the cursor with *.close()* on the cursor. And this is done in my code.
 
+That's all of the results. And I hope they will help!
+
+Best regards,
+Xinhao Liao
 
 --
 <span style="color:blue">Database query list</span>   
@@ -517,6 +525,14 @@ mysql> desc employees;
 +------------+---------------+------+-----+---------+-------+
 6 rows in set (0.03 sec)
 
+mysql> select * from employees limit 1;
++--------+------------+------------+-----------+--------+------------+
+| emp_no | birth_date | first_name | last_name | gender | hire_date  |
++--------+------------+------------+-----------+--------+------------+
+|  10001 | 1953-09-02 | Georgi     | Facello   | M      | 1986-06-26 |
++--------+------------+------------+-----------+--------+------------+
+1 row in set (0.05 sec)
+
 mysql> select count(1) from employees where year(hire_date) in (1994,1995,1990);
 +----------+
 | count(1) |
@@ -524,6 +540,25 @@ mysql> select count(1) from employees where year(hire_date) in (1994,1995,1990);
 |    52560 |
 +----------+
 1 row in set (0.46 sec)
+
+mysql> desc titles;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| emp_no    | int(11)     | NO   | PRI | NULL    |       |
+| title     | varchar(50) | NO   | PRI | NULL    |       |
+| from_date | date        | NO   | PRI | NULL    |       |
+| to_date   | date        | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+4 rows in set (0.03 sec)
+
+mysql> select * from titles limit 1;
++--------+-----------------+------------+------------+
+| emp_no | title           | from_date  | to_date    |
++--------+-----------------+------------+------------+
+|  10001 | Senior Engineer | 1986-06-26 | 9999-01-01 |
++--------+-----------------+------------+------------+
+1 row in set (0.03 sec)
 
 mysql> select count(1) from titles where title = 'Senior Engineer' and from_date <= '1986-06-26' and to_date >= '1986-06-26';
 +----------+
@@ -636,5 +671,4 @@ mysql> desc tweets;
 | tweet | longtext   | YES  |     | NULL    |       |
 +-------+------------+------+-----+---------+-------+
 2 rows in set (0.02 sec)
-
 ```
