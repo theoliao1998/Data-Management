@@ -215,6 +215,29 @@ For employee's data,
 +-------------+-------------+
 ```
 
+The 20 randomly selected tweets are obtained from the code in *.py* and given as below.
+```
+['Congrats Sindu Giri 👏\n#umsialumni https://t.co/O9vSib7beB', 1]
+['Q3: How will the idea of traditional learning shift?', 0]
+["HAPPENING NOW! Join us today for UMSI's QuasiCon 2018 a FREE annual gathering that brings information professionals… https://t.co/QOrqV7qBdG", 0]
+['.@umsi professor @LionelPeterRob1 was featured on The Lynn Martin show discussing #automatedvehicles! Check it out… https://t.co/aCyDwc0LFj', 2]
+['RT @christinacz: Tyree’s hacking the @Allied_Media site and showing us how #amc2018 #TC2018 https://t.co/uhxz6Ia3iR', 1]
+['RT @Cs2019Our: This #OurCS2019 project applies user experience research, human-centered design, and interaction design to understand how sm…', 2]
+['UMSI students showcase their research, display their projects, and participate in lightning talks about local and g… https://t.co/2I4nqOiEUv', 0]
+['RT @Ismail_badache: ACM Table of Contents with all #SIGIR2018 papers is now online here.  \nhttps://t.co/vkqmFzT1g6\n(PDFs available July 8th…', 3]
+['RT @gaycyborg: Myself and @_rnbrewer repping @umsi at the session on Making Core Memory lead by @SamShorey at #iConf19. Learning about hist…', 3]
+['RT @drchuck: How I record my MOOC lectures (updated) - https://t.co/Gj7PwzmUqt', 1]
+['📣 Today is the last day to register for the Fall 2019 Student Exposition 📣 https://t.co/yKse1F38UW https://t.co/nKjCs4nAYu', 0]
+["Thanks! Can't wait for 2019 ✨ @igniteumxi https://t.co/054ZSrg98G", 0]
+['UMSI senior Jessica Vu is studying UX and is spending her Alternative Spring Break in Detroit working at… https://t.co/FzxxGT7K0t', 1]
+["Congrats to Sarita Schoenebeck on her recent promotion to associate professor with tenure 👏She's best known for her… https://t.co/DrLpYWiZPN", 1]
+['RT @cab938: @houshuang @umsi @jpgard @las18ed And, the platform for replication we developed is completely open source on GitHub https://t.…', 4]
+['.@UChicago assistant professor @saskatchewin looks at gender inequality in labor markets through a study of male an… https://t.co/p52iL6RTGi', 0]
+['MSI student Desiree McLain is using information to remove sociotechnical barriers to entrepreneurship in #Detroit.… https://t.co/uBjdD8txrV', 0]
+['RT @sdemonner: Anthony Whyte sharing his experience as a Lecturer for the @umsi SI 664 course this Fall with the ITS Teaching &amp; Learning te…', 5]
+['RT @an_dre_a_: My awesome ta got me a document for Christmas ❤️ https://t.co/pt3ogiRzpt', 1]
+['@uofmbec @UMengineering @UMich @michigan_AI @UMRobotics @UMichResearch 👏👏👏', 0]
+```
 
 
 
@@ -574,5 +597,44 @@ mysql> select distinct first_name, last_name from employees where emp_no in (sel
 | Kristinn    | Leuchs      |
 +-------------+-------------+
 50 rows in set (0.76 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| ro_company1        |
+| ro_employees       |
+| ro_query           |
+| ro_recipes         |
+| ro_research1       |
+| ro_twitter         |
+| sys                |
++--------------------+
+10 rows in set (0.03 sec)
+
+mysql> use ro_twitter;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++----------------------+
+| Tables_in_ro_twitter |
++----------------------+
+| tweets               |
++----------------------+
+1 row in set (0.02 sec)
+
+mysql> desc tweets;
++-------+------------+------+-----+---------+-------+
+| Field | Type       | Null | Key | Default | Extra |
++-------+------------+------+-----+---------+-------+
+| id    | bigint(20) | NO   | PRI | NULL    |       |
+| tweet | longtext   | YES  |     | NULL    |       |
++-------+------------+------+-----+---------+-------+
+2 rows in set (0.02 sec)
 
 ```
