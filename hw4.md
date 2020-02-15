@@ -148,7 +148,7 @@ For questions about some exciting places to visit,
 | Rivne      |
 +------------+
 ```  
-* There are 518 cities in a Constitutional Monarchy (with another 90 cities in a Constitutional Monarchy, Federation).  
+* There are 518 cities in a Constitutional Monarchy (with another 90 cities in a Constitutional Monarchy, Federation, and another 3 in a Constitutional Monarchy (Emirate)).  
 * 5 random cities that a population above 13000 and below 500,000 that don't speak English as an official language and are not a Republic could be as follows.  
 ```
 +----------------+
@@ -672,6 +672,23 @@ mysql> select count(1) from city join country on city.CountryCode=country.Code w
 | count(1) |
 +----------+
 |       90 |
++----------+
+1 row in set (0.03 sec)
+
+mysql> select count(1) from city join country on city.CountryCode=country.Code where country.GovernmentForm LIKE '%Constitutional Monarchy%'
+    -> ;
++----------+
+| count(1) |
++----------+
+|      611 |
++----------+
+1 row in set (0.16 sec)
+
+mysql> select count(1) from city join country on city.CountryCode=country.Code where country.GovernmentForm = 'Constitutional Monarchy (Emirate)';
++----------+
+| count(1) |
++----------+
+|        3 |
 +----------+
 1 row in set (0.03 sec)
 
