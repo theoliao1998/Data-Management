@@ -149,17 +149,17 @@ For questions about some exciting places to visit,
 +------------+
 ```  
 * There are 518 cities in a Constitutional Monarchy (with another 90 cities in a Constitutional Monarchy, Federation, and another 3 in a Constitutional Monarchy (Emirate)).  
-* 5 random cities that a population above 13000 and below 500,000 that don't speak English as an official language and are not a Republic could be as follows.  
+* 5 random cities that a population above 13000 and below 500,000 that don't speak English as an official language and are not a Republic could be as follows. (Note: They are also not Federal Republic, People's Republic, Socialistic Republic, or Islamic Republic as well.)  
 ```
-+----------------+
-| Name           |
-+----------------+
-| Miyakonojo     |
-| Isesaki        |
-| Khamis Mushayt |
-| Cienfuegos     |
-| Godhra         |
-+----------------+
++-----------+
+| Name      |
++-----------+
+| Sayama    |
+| Masqat    |
+| Dordrecht |
+| Hakodate  |
+| Portmore  |
++-----------+
 ```
 
 For questions related to the *ro_employee database* database,  
@@ -703,6 +703,18 @@ mysql> select ct.Name from city ct join country cy on ct.CountryCode=cy.Code whe
 | Godhra         |
 +----------------+
 5 rows in set (0.03 sec)
+
+mysql> select ct.Name from city ct join country cy on ct.CountryCode=cy.Code where ct.population BETWEEN 13000 AND 500000 and cy.GovernmentForm not LIKE '%Republic%' and cy.Code not in (select CountryCode from countrylanguage where Language='English' and IsOfficial='T') order by rand() limit 5;
++-----------+
+| Name      |
++-----------+
+| Sayama    |
+| Masqat    |
+| Dordrecht |
+| Hakodate  |
+| Portmore  |
++-----------+
+5 rows in set (0.18 sec)
 
 mysql> use ro_employees;
 Database changed
