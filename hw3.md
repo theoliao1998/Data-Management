@@ -36,7 +36,417 @@ For question about revenue,
 +---------------------------------------------------------------+
 ```  
 
-* As for unique companies generated a revenue of more than $1,000,000,000 (one billion dollars) in any year, there is only one more company, which is "WORKERS' COMPENSATION REINSURANCE ASSOCIATION".
+* As for unique companies generated a revenue of more than $1,000,000,000 (one billion dollars) in any year, there are 404 companies in total as listed below.  
+```
++-----------------------------------------------------------------------------+
+| name                                                                        |
++-----------------------------------------------------------------------------+
+| PROVIDENCE HEALTH SYSTEM -SO CALIFORNIA                                     |
+| SUTTER HEALTH SACRAMENTO SIERRA REGION                                      |
+| Children's Healthcare of Atlanta Inc                                        |
+| Healthfirst PHSP Inc                                                        |
+| KALEIDA HEALTH                                                              |
+| KAISER FOUNDATION HEALTH PLAN OF COLORADOINC                                |
+| TEAMSTERS WESTERN REGION AND NEW JERSEYHEALTH CARE FUND                     |
+| NATIONAL AUTOMATIC SPRINKLER INDUSTRY WELFARE FUND                          |
+| IHC HEALTH SERVICES INC                                                     |
+| Security Health Plan of Wisconsin Inc                                       |
+| The Boeing Company Veba Master Trust                                        |
+| AMERICAN POSTAL WORKERS UNION AFL CIO HEALTH                                |
+| MAYO CLINIC HOSPITAL - ROCHESTER                                            |
+| THE NEMOURS FOUNDATION                                                      |
+| LONG ISLAND JEWISH MEDICAL CENTERC/O NORTH SHORE-LIJ HEALTH SYSTEM          |
+| INDIANA UNIVERSITY HEALTH INC                                               |
+| Santa Barbara Cottage Hospital                                              |
+| MOTION PICTURE INDUSTRY HEALTH PLAN                                         |
+| SSM Health Care St Louis                                                    |
+| Atlantic Health System Inc Group Return                                     |
+| CENTRAL STATES SE & SW AREAS HEALTH & WELFARE F                             |
+| West Penn Allegheny Health System Inc                                       |
+| METHODIST HOSPITAL GROUP                                                    |
+| HACKENSACK UNIVERSITY MEDICAL CENTER                                        |
+| BOY SCOUTS OF AMERICA                                                       |
+| Charleston Area Medical Center Inc                                          |
+| American Electric Power System EmployeesBenefit Trust                       |
+| Miami Valley Hospital                                                       |
+| PARK NICOLLET GROUP RETURN                                                  |
+| MERITER HOSPITAL INC                                                        |
+| SEVENTH-DAY ADVENTISTS LOMA LINDAUNIVERSITY MEDICAL CENTER                  |
+| FRANCISCAN ALLIANCE INC                                                     |
+| Aurora Health Care Inc Group Return                                         |
+| FORSYTH MEMORIAL HOSPITAL                                                   |
+| NOVANT HEALTH INC                                                           |
+| Priority Health                                                             |
+| The Cooper Health System a New JerseyNon-Profit Corporation                 |
+| UNITED STEEL PAPER AND FORESTRYRUBBER MANUFACTURING ENERGY ALLIED           |
+| UNITE HERE HEALTH                                                           |
+| NATIONAL ELEVATOR INDUSTRY HEALTH BENEFIT PLAN                              |
+| KAISER FOUNDATION HEALTH PLAN INC                                           |
+| KNIGHTS OF COLUMBUS                                                         |
+| BayCare Health System Inc                                                   |
+| Palos Community Hospital                                                    |
+| SCAN HEALTH PLAN                                                            |
+| Banner Health                                                               |
+| KAISER FOUNDATION HOSPITALS                                                 |
+| MAYO FOUNDATION FOR MEDICAL EDUCATION AND RESEARCH                          |
+| VNS CHOICE                                                                  |
+| KAISER FOUNDATION HEALTH PLANOF THE NORTHWEST INC                           |
+| HARVARD VANGUARD MEDICAL ASSOCIATES INC                                     |
+| ALLINA HEALTH SYSTEM                                                        |
+| SELECTHEALTH INC                                                            |
+| Educational Testing Service                                                 |
+| Thrivent Financial for Lutherans                                            |
+| GROUP HEALTH COOPERATIVE                                                    |
+| THE TOLEDO HOSPITAL                                                         |
+| Nationwide Children's Hospital Group Return                                 |
+| SENTARA HEALTHCARE                                                          |
+| THE EVANGELICAL LUTHERAN GOOD SAMARITAN SOCIETY                             |
+| MULTICARE HEALTH SYSTEM                                                     |
+| KAISER FOUNDATION HEALTH PLAN OF THEMID-ATLANTIC STATES INC                 |
+| FINANCIAL INDUSTRY REGULATORY AUTHORITY INC                                 |
+| Ochsner Clinic Foundation                                                   |
+| PRESBYTERIAN HEALTHCARE SERVICES                                            |
+| KAISER FOUNDATION HEALTH PLAN OF GEORGIA INC                                |
+| CAPITAL DISTRICT PHYSICIANS' HEALTH PLAN INC                                |
+| METHODIST HEALTHCARE - MEMPHIS HOSPITALS                                    |
+| KAISER FOUNDATION HEALTH PLAN OF GEORGIAINC                                 |
+| Children's Medical Center of Dallas                                         |
+| CENTRA HEALTH INC                                                           |
+| OAKWOOD HEALTHCARE INC                                                      |
+| GROUP HEALTH PLAN INC                                                       |
+| Maimonides Medical Center                                                   |
+| Memorial Sloan-Kettering Cancer Center                                      |
+| PGA TOUR INC                                                                |
+| American Bureau of Shipping                                                 |
+| Children's Healthcare of Atlanta Group Return                               |
+| SWEDISH HEALTH SERVICES                                                     |
+| Virginia Mason Medical Center                                               |
+| HEALTH SHARE OF OREGON                                                      |
+| SUTTER EAST BAY HOSPITALS                                                   |
+| SOUTHERN CALIFORNIA EDISON CO VEBA                                          |
+| UAW RETIREE MEDICAL BENEFITS TRUST                                          |
+| 1199SEIU NATIONAL BENEFIT FUND FORHEALTH AND HUMAN SERVICE EMPLOYEES        |
+| Tufts Associated Health MaintenanceOrganization Inc                         |
+| UNITED STATES STEEL CORPORATIONREPRESENTED RETIREES BENEFIT TRUST           |
+| THE CLEVELAND CLINIC FOUNDATION                                             |
+| MONTEFIORE MEDICAL CENTER                                                   |
+| BETH ISRAEL MEDICAL CENTER                                                  |
+| MANAGEMENT-ILA MANAGED HEALTHCARE TRUST FUND                                |
+| Winthrop University Hospital Association                                    |
+| BRAZOS ELECTRIC POWER COOPERATIVE INC                                       |
+| St Elizabeth Medical Center Inc                                             |
+| HEALTHPLUS OF MICHIGAN                                                      |
+| STATEN ISLAND UNIVERSITY HOSPITAL                                           |
+| PALO ALTO MEDICAL FOUNDATION                                                |
+| PRESENCE HOSPITALS PRV                                                      |
+| St George Corporation                                                       |
+| JOHN MUIR HEALTH                                                            |
+| FEEDING AMERICA                                                             |
+| Summa Health Group Return                                                   |
+| UNIVERSITY OF WISCONSIN FOUNDATION                                          |
+| THE NEW YORK AND PRESBYTERIAN HOSPITAL                                      |
+| WILLIAM BEAUMONT HOSPITAL                                                   |
+| AFFINITY HEALTH PLAN INC                                                    |
+| PROVIDENCE HEALTH & SERVICES - OREGON                                       |
+| Children's Health Care                                                      |
+| BLUE CARE NETWORK OF MICHIGAN                                               |
+| GRADY MEMORIAL HOSPITAL CORPORATION                                         |
+| CareSource                                                                  |
+| THE MOUNT SINAI HOSPITAL                                                    |
+| MVP HEALTH PLAN INC                                                         |
+| KAISER FOUNDATION HEALTH PLANOF THE NORTHWEST                               |
+| AMERICAN CHEMICAL SOCIETY                                                   |
+| Aurora Health Care Inc                                                      |
+| UNIVERSITY HEALTH SYSTEM INC                                                |
+| HENRY FORD HEALTH SYSTEM                                                    |
+| Wells Fargo & Co Employee Benefit Trust                                     |
+| ROBERT WOOD JOHNSON UNIVERSITY HOSPITAL                                     |
+| MEDICA HEALTH PLANS                                                         |
+| THE CLEVELAND CLINIC FOUNDATION GROUP RETURN                                |
+| GENERAL ELECTRIC INSURANCE PLAN TRUST                                       |
+| COMMUNITY HEALTH PLAN OF WASHINGTON                                         |
+| Lenox Hill HospitalC/O NORTH SHORE-LIJ HEALTH SYSTEM                        |
+| Norton Hospitals Inc                                                        |
+| THE METHODIST HOSPITAL                                                      |
+| NORTH SHORE-LONG ISLAND JEWISH HEALTH CARE                                  |
+| WAL-MART STORES INCASSOCIATES' HEALTH & WELFARE TRUST                       |
+| ICAHN SCHOOL OF MEDICINE AT MOUNT SINAI                                     |
+| GOVERNMENT EMPLOYEES HEALTH ASSOCIATION INC                                 |
+| OPTIMA HEALTH PLAN                                                          |
+| SOUTHEASTERN CONFERENCE                                                     |
+| Fallon Community Health Plan Inc                                            |
+| CITY UNIVERSITY CONSTRUCTION FUND                                           |
+| NEIGHBORHOOD HEALTH PLAN INC                                                |
+| YOUNG MEN'S CHRISTIAN ASSOCIATION RETIREMENT FUND                           |
+| HEALTH ALLIANCE PLAN OF MICHIGAN                                            |
+| University Hospitals Health System IncGroup Return                          |
+| INTERNATIONAL BROTHERHOOD OF ELECTRICALWORKERS' PENSION BENEFIT FUND        |
+| DELTA DENTAL OF CALIFORNIA                                                  |
+| University Health Network                                                   |
+| HEALTHPARTNERS INC                                                          |
+| NEW YORK SOCIETY FOR THE RELIEF OF THERUPTURED AND CRIPPLED MAINTAINING THE |
+| Managed Health Inc                                                          |
+| THE RESEARCH FOUNDATION FOR THESTATE UNIVERSITY OF NEW YORK                 |
+| JEWISH COMMUNAL FUND                                                        |
+| TEXAS MUTUAL INSURANCE COMPANY                                              |
+| MODERN WOODMEN OF AMERICA                                                   |
+| MAYO CLINIC                                                                 |
+| WESCOM CENTRAL CREDIT UNIONDBA WESCOM CREDIT UNION                          |
+| PROVIDENCE HEALTH & SERVICES - WASHINGTON                                   |
+| DELTA DENTAL PLAN OF MICHIGAN INC                                           |
+| SUTTER HEALTH                                                               |
+| INOVA HEALTH CARE SERVICES                                                  |
+| SENTARA HOSPITALS                                                           |
+| Adventist Health SystemSunbelt Inc                                          |
+| Mercy Health                                                                |
+| NATL CHRISTIAN CHARITABLE FDN INC                                           |
+| Prairie Meadows Race Track and Casino Inc                                   |
+| KAISER FOUNDATION HEALTH PLAN OF COLORADO                                   |
+| Texas Health Resources                                                      |
+| BJC HEALTH SYSTEM GROUP RETURN                                              |
+| CONFERENCE ON JEWISH MATERIAL CLAIMSAGAINST GERMANY INC                     |
+| SUTTER WEST BAY HOSPITALS                                                   |
+| LINE CONSTRUCTION BENEFIT FUND                                              |
+| INDEPENDENT HEALTH ASSOCIATION INC                                          |
+| HARVARD PILGRIM HEALTH CARE INC                                             |
+| MERIDIAN HEALTH SYSTEM INC - SUBORDINATES                                   |
+| Riverside Healthcare Association Inc Group                                  |
+| NORTH SHORE UNIVERSITY HOSPITALC/O NORTH SHORE-LIJ HEALTH SYSTEM            |
+| Advocate Health And Hospitals Corp                                          |
+| AMERICAN HEART ASSOCIATION INC                                              |
+| Arizona State University Foundation For A NewAmerican University            |
+| Albany Medical Center Group Organization                                    |
+| UNITED FOOD & COMMERCIAL WORKERS UNIONS& FOOD EMPLOYERS BENEFIT FUND        |
+| UNIVERSITY OF TORONTO                                                       |
+| SILICON VALLEY COMMUNITY FOUNDATION                                         |
+| ST VINCENT HOSPITAL AND HEALTH CARE CENTER INC                              |
+| The Rotary Foundation of Rotary International                               |
+| DePaul University                                                           |
+| World Vision Inc                                                            |
+| OhioHealth Corporation Group Return                                         |
+| THE CHANCELLOR MASTER AND SCHOLARSOF THE UNIVERSITY OF CAMBRIDGE            |
+| ST LUKE'S-ROOSEVELT HOSPITAL CENTER                                         |
+| NATIONAL RURAL UTILITIES COOPERATIVEFINANCE CORPORATION                     |
+| COMMUNITY FOUNDATION OF NORTHWEST INDIANAINC                                |
+| NORTH CAROLINA BAPTIST HOSPITAL                                             |
+| HAWAI'I PACIFIC HEALTH GROUP RETURN                                         |
+| SCHWAB CHARITABLE FUND                                                      |
+| METROPOLITAN MUSEUM OF ART                                                  |
+| CARNEGIE MELLON UNIVERSITY                                                  |
+| Massachusetts Institute of Technology                                       |
+| UPMC GROUP                                                                  |
+| THE MEDSTAR-GEORGETOWN MEDICAL CENTER INC                                   |
+| DUKE UNIVERSITY HEALTH SYSTEM INC                                           |
+| CAMPBELL UNIVERSITY INC                                                     |
+| THE NEW SCHOOL                                                              |
+| CHILDREN'S HOSPITAL LOS ANGELES                                             |
+| THE CHILDREN'S HOSPITAL OF PHILADELPHIA                                     |
+| YORK HOSPITAL                                                               |
+| William Marsh Rice University                                               |
+| TRUSTEES OF BOSTON UNIVERSITY                                               |
+| BILLINGS CLINIC                                                             |
+| HARVARD PRIVATE CAPITAL REALTY INCC/O HARVARD MANAGEMENT COMPANY INC        |
+| UNIVERSITY OF DAYTON                                                        |
+| SYRACUSE UNIVERSITY                                                         |
+| PEACEHEALTH                                                                 |
+| NORTHSIDE HOSPITAL INC                                                      |
+| CHRISTIANA CARE HEALTH SERVICES INC                                         |
+| COMMUNICATIONS WORKERS OF AMERICA AFL-CIO CLC                               |
+| Our Lady of the Lake Hospital Inc                                           |
+| Cornell University                                                          |
+| The Chancellor Master & Scholars of the University of Oxford                |
+| LIBERTY UNIVERSITY INC                                                      |
+| NATIONAL ASSOCIATION OF LETTER CARRIERS                                     |
+| COLORADO SEMINARY                                                           |
+| TEXAS CHRISTIAN UNIVERSITY                                                  |
+| UNIVERSITY OF ROCHESTER                                                     |
+| Indiana University Foundation                                               |
+| American National Red Cross & Its ConstituentChapters and Branches          |
+| PENNSYLVANIA EMPLOYEES BENEFIT TRUST FUND                                   |
+| THE COMMON FUND FOR NONPROFIT ORGANIZATIONS                                 |
+| Trustees of the University of Pennsylvania                                  |
+| Lancaster General Hospital                                                  |
+| LEHIGH UNIVERSITY                                                           |
+| WILLIS-KNIGHTON MEDICAL CENTER                                              |
+| The Queen's Medical Center                                                  |
+| TRUSTEES OF BOSTON COLLEGE                                                  |
+| President and Fellows of Harvard College                                    |
+| YALE UNIVERSITY                                                             |
+| PARTNERSHIP FOR SUPPLY CHAIN MANAGEMENT                                     |
+| FROEDTERT HEALTH INC                                                        |
+| UNIVERSITY OF CHICAGO                                                       |
+| NATURE CONSERVANCY                                                          |
+| SOUTHERN METHODIST UNIVERSITY                                               |
+| THE ROCKEFELLER UNIVERSITY                                                  |
+| SWARTHMORE COLLEGE                                                          |
+| AMERICAN LEBANESE SYRIAN ASSOCIATED CHARITIES INC                           |
+| Vanderbilt University                                                       |
+| University of Chicago Medical Ctr                                           |
+| Scott & White Memorial Hospital                                             |
+| Christus Health                                                             |
+| LOYOLA UNIVERSITY MEDICAL CENTER                                            |
+| Lehigh Valley Hospital                                                      |
+| The Nebraska Medical Center                                                 |
+| The Trustees of Princeton University                                        |
+| SAINT LOUIS UNIVERSITY                                                      |
+| GEISINGER HEALTH PLAN                                                       |
+| Baylor College of Medicine                                                  |
+| Sanford Group Return                                                        |
+| Ascension Health Alliance                                                   |
+| UNIVERSITY OF PITTSBURGH                                                    |
+| POMONA COLLEGE                                                              |
+| GEORGETOWN UNIVERSITY                                                       |
+| THE TRUSTEES OF COLUMBIA UNIVERSITYIN THE CITY OF NEW YORK                  |
+| The George Washington University                                            |
+| Michigan Catastrophic Claims Association                                    |
+| CEDARS-SINAI MEDICAL CENTER                                                 |
+| University of Southern California                                           |
+| FROEDTERT MEMORIAL LUTHERAN HOSPITAL INC                                    |
+| ALBERT EINSTEIN HEALTHCARE NETWORK GROUPLETTER RULING                       |
+| Mary Hitchcock Memorial Hospital                                            |
+| GEISINGER MEDICAL CENTER                                                    |
+| HARVARD MANAGEMENT PRIVATE EQUITY CORPC/O HARVARD MANAGEMENT COMPANY INC    |
+| MILTON HERSHEY SCHOOL AND SCHOOL TRUST                                      |
+| STATE EMPLOYEES' CREDIT UNION                                               |
+| Fordham University                                                          |
+| Trustees for Harvard University                                             |
+| UC Healthcare System                                                        |
+| WASHINGTON HOSPITAL CENTER CORPORATION                                      |
+| The Children's Mercy Hospital                                               |
+| Memorial Hermann Health System                                              |
+| Catholic Health Initiatives                                                 |
+| CHI St Luke's Health Baylor College of Medicine Medical Center              |
+| LOMA LINDA UNIVERSITY                                                       |
+| DUKE UNIVERSITY                                                             |
+| SHANDS TEACHING HOSPITAL AND CLINICS INC                                    |
+| Brown University                                                            |
+| NORTHEASTERN UNIVERSITY                                                     |
+| Rush University Medical Center                                              |
+| Catholic Health Initiatives Colorado                                        |
+| MOUNT CARMEL HEALTH SYSTEM                                                  |
+| The Medical College of Wisconsin Inc                                        |
+| UPMC                                                                        |
+| UNIVERSITY OF MARYLAND MEDICAL SYSTEM CORP                                  |
+| Temple University Hospital Inc                                              |
+| YESHIVA UNIVERSITY                                                          |
+| THE UNIVERSITY OF WESTERN ONTARIO                                           |
+| THE ADMINISTRATORS OF THE TULANE EDUCATIONAL FUND                           |
+| Edward Hospital                                                             |
+| PINNACLE HEALTH HOSPITALS                                                   |
+| Spectrum Health System Group Return                                         |
+| Children's Hospital                                                         |
+| Baylor University Medical Center                                            |
+| Children's Hospital Medical Center                                          |
+| NATIONAL PHILANTHROPIC TRUST                                                |
+| JOHNS HOPKINS UNIVERSITY                                                    |
+| THE CHILDREN'S HOSPITAL OF PHILADELPHIAFOUNDATION                           |
+| MERCY HOSPITALS EAST COMMUNITIES                                            |
+| University of Miami                                                         |
+| Main Line Hospitals Inc                                                     |
+| OhioHealth Corporation                                                      |
+| TRINITY HEALTH CORPORATION                                                  |
+| Franciscan Health System                                                    |
+| AMERICAN BIBLE SOCIETY                                                      |
+| DREXEL UNIVERSITY                                                           |
+| University of Notre Dame du Lac                                             |
+| TRUSTEES OF THE ESTATE OF BERNICE PAUAHIBISHOP                              |
+| CALIFORNIA ACADEMY OF SCIENCES                                              |
+| CASE WESTERN RESERVE UNIVERSITY                                             |
+| MEMORIAL HEALTH SERVICES GROUP RETURN                                       |
+| TRINITY HEALTH - MICHIGAN                                                   |
+| THE JOHNS HOPKINS HOSPITAL                                                  |
+| Trustees of Dartmouth College                                               |
+| University of Delaware                                                      |
+| Saint Francis Hospital Inc                                                  |
+| Temple University - Of the Commonwealth System of Higher Education          |
+| BUILDING SERVICE 32BJ HEALTH FUND                                           |
+| WASHINGTON UNIVERSITY                                                       |
+| NORTH CAROLINA ELECTRIC MEMBERSHIPCORPORATION                               |
+| GLOBAL HEALTH SOLUTIONS INC                                                 |
+| HOAG MEMORIAL HOSPITAL PRESBYTERIAN                                         |
+| MICHIGAN EDUCATION SPECIAL SERVICES ASSN                                    |
+| Trustees of Tufts College                                                   |
+| THE HOWARD UNIVERSITY                                                       |
+| Mercy Hospital Springfield                                                  |
+| DELTA PILOTS DISABILITY AND SURVIVOR TRUST                                  |
+| Howard Hughes Medical Institute                                             |
+| Food For the Poor Inc                                                       |
+| PORTERCARE ADVENTIST HEALTH SYSTEM                                          |
+| Patient Access Network Foundation                                           |
+| REX HOSPITAL INC                                                            |
+| City of Hope National Medical Center                                        |
+| Marshfield Clinic Inc                                                       |
+| MOSES H CONE MEMORIAL HOSPITALOPERATING CORPORATION                         |
+| Rhode Island Hospital                                                       |
+| BOSTON MEDICAL CENTER                                                       |
+| NorthShore University HealthSystem                                          |
+| Orlando Health Inc                                                          |
+| North Mississippi Medical Center Inc                                        |
+| THE MITRE CORPORATION                                                       |
+| CUMBERLAND COUNTY HOSPITAL SYSTEM INC                                       |
+| PALMETTO HEALTH                                                             |
+| CARILION MEDICAL CENTER                                                     |
+| Partners HealthCare System Inc & AffiliatesGroup Return                     |
+| Hartford Hospital                                                           |
+| OSF HEALTHCARE SYSTEM                                                       |
+| WakeMed                                                                     |
+| NYU HOSPITALS CENTER                                                        |
+| ASANTE                                                                      |
+| BETH ISRAEL DEACONESS MEDICAL CENTER                                        |
+| Children's Hospital Corporation                                             |
+| CENTRAL ELECTRIC POWER COOPERATIVE INC                                      |
+| Northwestern Memorial HealthCare                                            |
+| STANFORD HEALTH CARE                                                        |
+| Baptist Healthcare System Inc                                               |
+| FLORIDA HEALTH SCIENCES CENTER INC                                          |
+| NEW YORK UNIVERSITY                                                         |
+| FRESNO COMMUNITY HOSPITAL AND MEDICAL CENTER                                |
+| Ann & Robert H Lurie Childrens Hospital ofChicago                           |
+| Northwestern University                                                     |
+| METROPLUS HEALTH PLAN INC                                                   |
+| Northwestern Memorial Healthcare Group                                      |
+| SHRINERS HOSPITALS FOR CHILDREN                                             |
+| Lucile Salter Packard Children'sHospital at Stanford                        |
+| THE BOARD OF TRUSTEES OF THE LELAND STANFORDJUNIOR UNIVERSITY               |
+| BAPTIST HOSPITAL OF MIAMI INC                                               |
+| Baystate Medical Center Inc                                                 |
+| Pitt County Memorial Hospital Inc                                           |
+| Sharp Memorial Hospital                                                     |
+| GUARANTY ASSOCIATION BENEFITS COMPANY                                       |
+| UMASS MEMORIAL HEALTH CARE INC & AFFILIATES                                 |
+| BATTELLE MEMORIAL INSTITUTE                                                 |
+| Eastern Maine Healthcare Systems EMMCEastern Maine Medical Center           |
+| METHODIST HOSPITALS OF DALLAS &PAVILION PROPERTIES                          |
+| Dana-Farber Cancer Institute Inc                                            |
+| California Institute of Technology                                          |
+| WEA INSURANCE CORPORATION                                                   |
+| WORKERS' COMPENSATION REINSURANCE ASSOCIATION                               |
+| NEW YORK STATE CATHOLIC HEALTH PLANINC                                      |
+| LESTER E COX MEDICAL CENTERS                                                |
+| Smithsonian Institution                                                     |
+| MAINE MEDICAL CENTER                                                        |
+| UNITED STUDENT AID FUNDS INC                                                |
+| Delta Dental of Washington                                                  |
+| BAPTIST HEALTH SOUTH FLORIDAINC                                             |
+| EMORY GROUP RETURN                                                          |
+| CYSTIC FIBROSIS FOUNDATION- HEADQUARTERS                                    |
+| MEMORIAL HEALTH SYSTEM GROUP                                                |
+| NATIONAL COLLEGIATE ATHLETIC ASSOCIATION                                    |
+| EMORY UNIVERSITY                                                            |
+| Scripps Health                                                              |
+| THE UNIVERSITY OF VERMONT MEDICAL CENTER INC                                |
+| MCLEOD REGIONAL MEDICAL CENTER OFTHE PEE DEE INC                            |
+| YALE-NEW HAVEN HOSPITAL                                                     |
+| BOSTON MEDICAL CENTER HEALTH PLAN INC                                       |
+| SEATTLE CHILDREN'S HOSPITAL                                                 |
+| UCare Minnesota                                                             |
+| DIGNITY HEALTH                                                              |
+| RADY CHILDREN'S HOSPITAL - SAN DIEGO                                        |
+| Southern Baptist Hospital of Florida Inc                                    |
+| Sharp HealthCare                                                            |
+| St Luke's Regional Medical Center                                           |
++-----------------------------------------------------------------------------+
+```
 
 For expenses,  
 *  The top 20 unique companies by expenses in 2013 and their expenses are shown below.  
@@ -98,7 +508,9 @@ For expenses,
 ```
   
 For queries about specific words,  
-* There are 359 companies with the "toy" anywhere in the ‘purpose’ field.  
+* There are 261 companies with the word toy anywhere in the ‘purpose’ field, which is obtained from the following query considering all possible occurence of word toy and toys.  
+`select count(distinct ein) from taxdata where purpose LIKE "% toy %" or purpose LIKE "% toys %" or purpose LIKE "% toy. %" or  purpose LIKE "% toys. %" or purpose LIKE "toy %" or purpose LIKE "toys %" or purpose LIKE "% toy." or  purpose LIKE "% toys.";`
+
 * There are 2796 rows having both the word ‘smith’ in the ‘ptname’ field and reported revenue (e.g. revenue is not empty or 0).  
 * The company names and length of the names for 50 random companies with a ptid of P01345770 are listed below.  
 
@@ -378,40 +790,424 @@ mysql> select distinct name, expenses from taxdata where year = 2013 order by ex
 +---------------------------------------------------------+-------------+
 20 rows in set (0.34 sec)
 
-mysql> select distinct ein, city from taxdata where revenue BETWEEN 1 AND 100000 and expenses BETWEEN 10000 AND 200000 order by rand() limit 20;
-+-----------+---------------+
-| ein       | city          |
-+-----------+---------------+
-| 541945858 | ROCHESTER     |
-| 273084801 | Los Angeles   |
-| 770319903 | Los Gatos     |
-| 431769903 | Van Buren     |
-| 521990279 | Silver Spring |
-| 930782729 | PORTLAND      |
-| 237168819 | NEW BRITAIN   |
-| 263613626 | MEMPHIS       |
-| 231034791 | GETTYSBURG    |
-| 386100681 | Flint         |
-| 680657977 | SWARTZ CREEK  |
-| 237372144 | Portland      |
-| 113649939 | MEXICO        |
-| 141865407 | ORISKANY      |
-| 521410219 | Germantown    |
-| 273558027 | PEEKSKILL     |
-| 382896155 | GRAND RAPIDS  |
-| 136134882 | STATEN ISLAND |
-| 223523449 | Allentown     |
-| 710467353 | CLARKSVILLE   |
-+-----------+---------------+
-20 rows in set (0.54 sec)
+mysql> select distinct name from taxdata where revenue > 1000000000;
++-----------------------------------------------------------------------------+
+| name                                                                        |
++-----------------------------------------------------------------------------+
+| PROVIDENCE HEALTH SYSTEM -SO CALIFORNIA                                     |
+| SUTTER HEALTH SACRAMENTO SIERRA REGION                                      |
+| Children's Healthcare of Atlanta Inc                                        |
+| Healthfirst PHSP Inc                                                        |
+| KALEIDA HEALTH                                                              |
+| KAISER FOUNDATION HEALTH PLAN OF COLORADOINC                                |
+| TEAMSTERS WESTERN REGION AND NEW JERSEYHEALTH CARE FUND                     |
+| NATIONAL AUTOMATIC SPRINKLER INDUSTRY WELFARE FUND                          |
+| IHC HEALTH SERVICES INC                                                     |
+| Security Health Plan of Wisconsin Inc                                       |
+| The Boeing Company Veba Master Trust                                        |
+| AMERICAN POSTAL WORKERS UNION AFL CIO HEALTH                                |
+| MAYO CLINIC HOSPITAL - ROCHESTER                                            |
+| THE NEMOURS FOUNDATION                                                      |
+| LONG ISLAND JEWISH MEDICAL CENTERC/O NORTH SHORE-LIJ HEALTH SYSTEM          |
+| INDIANA UNIVERSITY HEALTH INC                                               |
+| Santa Barbara Cottage Hospital                                              |
+| MOTION PICTURE INDUSTRY HEALTH PLAN                                         |
+| SSM Health Care St Louis                                                    |
+| Atlantic Health System Inc Group Return                                     |
+| CENTRAL STATES SE & SW AREAS HEALTH & WELFARE F                             |
+| West Penn Allegheny Health System Inc                                       |
+| METHODIST HOSPITAL GROUP                                                    |
+| HACKENSACK UNIVERSITY MEDICAL CENTER                                        |
+| BOY SCOUTS OF AMERICA                                                       |
+| Charleston Area Medical Center Inc                                          |
+| American Electric Power System EmployeesBenefit Trust                       |
+| Miami Valley Hospital                                                       |
+| PARK NICOLLET GROUP RETURN                                                  |
+| MERITER HOSPITAL INC                                                        |
+| SEVENTH-DAY ADVENTISTS LOMA LINDAUNIVERSITY MEDICAL CENTER                  |
+| FRANCISCAN ALLIANCE INC                                                     |
+| Aurora Health Care Inc Group Return                                         |
+| FORSYTH MEMORIAL HOSPITAL                                                   |
+| NOVANT HEALTH INC                                                           |
+| Priority Health                                                             |
+| The Cooper Health System a New JerseyNon-Profit Corporation                 |
+| UNITED STEEL PAPER AND FORESTRYRUBBER MANUFACTURING ENERGY ALLIED           |
+| UNITE HERE HEALTH                                                           |
+| NATIONAL ELEVATOR INDUSTRY HEALTH BENEFIT PLAN                              |
+| KAISER FOUNDATION HEALTH PLAN INC                                           |
+| KNIGHTS OF COLUMBUS                                                         |
+| BayCare Health System Inc                                                   |
+| Palos Community Hospital                                                    |
+| SCAN HEALTH PLAN                                                            |
+| Banner Health                                                               |
+| KAISER FOUNDATION HOSPITALS                                                 |
+| MAYO FOUNDATION FOR MEDICAL EDUCATION AND RESEARCH                          |
+| VNS CHOICE                                                                  |
+| KAISER FOUNDATION HEALTH PLANOF THE NORTHWEST INC                           |
+| HARVARD VANGUARD MEDICAL ASSOCIATES INC                                     |
+| ALLINA HEALTH SYSTEM                                                        |
+| SELECTHEALTH INC                                                            |
+| Educational Testing Service                                                 |
+| Thrivent Financial for Lutherans                                            |
+| GROUP HEALTH COOPERATIVE                                                    |
+| THE TOLEDO HOSPITAL                                                         |
+| Nationwide Children's Hospital Group Return                                 |
+| SENTARA HEALTHCARE                                                          |
+| THE EVANGELICAL LUTHERAN GOOD SAMARITAN SOCIETY                             |
+| MULTICARE HEALTH SYSTEM                                                     |
+| KAISER FOUNDATION HEALTH PLAN OF THEMID-ATLANTIC STATES INC                 |
+| FINANCIAL INDUSTRY REGULATORY AUTHORITY INC                                 |
+| Ochsner Clinic Foundation                                                   |
+| PRESBYTERIAN HEALTHCARE SERVICES                                            |
+| KAISER FOUNDATION HEALTH PLAN OF GEORGIA INC                                |
+| CAPITAL DISTRICT PHYSICIANS' HEALTH PLAN INC                                |
+| METHODIST HEALTHCARE - MEMPHIS HOSPITALS                                    |
+| KAISER FOUNDATION HEALTH PLAN OF GEORGIAINC                                 |
+| Children's Medical Center of Dallas                                         |
+| CENTRA HEALTH INC                                                           |
+| OAKWOOD HEALTHCARE INC                                                      |
+| GROUP HEALTH PLAN INC                                                       |
+| Maimonides Medical Center                                                   |
+| Memorial Sloan-Kettering Cancer Center                                      |
+| PGA TOUR INC                                                                |
+| American Bureau of Shipping                                                 |
+| Children's Healthcare of Atlanta Group Return                               |
+| SWEDISH HEALTH SERVICES                                                     |
+| Virginia Mason Medical Center                                               |
+| HEALTH SHARE OF OREGON                                                      |
+| SUTTER EAST BAY HOSPITALS                                                   |
+| SOUTHERN CALIFORNIA EDISON CO VEBA                                          |
+| UAW RETIREE MEDICAL BENEFITS TRUST                                          |
+| 1199SEIU NATIONAL BENEFIT FUND FORHEALTH AND HUMAN SERVICE EMPLOYEES        |
+| Tufts Associated Health MaintenanceOrganization Inc                         |
+| UNITED STATES STEEL CORPORATIONREPRESENTED RETIREES BENEFIT TRUST           |
+| THE CLEVELAND CLINIC FOUNDATION                                             |
+| MONTEFIORE MEDICAL CENTER                                                   |
+| BETH ISRAEL MEDICAL CENTER                                                  |
+| MANAGEMENT-ILA MANAGED HEALTHCARE TRUST FUND                                |
+| Winthrop University Hospital Association                                    |
+| BRAZOS ELECTRIC POWER COOPERATIVE INC                                       |
+| St Elizabeth Medical Center Inc                                             |
+| HEALTHPLUS OF MICHIGAN                                                      |
+| STATEN ISLAND UNIVERSITY HOSPITAL                                           |
+| PALO ALTO MEDICAL FOUNDATION                                                |
+| PRESENCE HOSPITALS PRV                                                      |
+| St George Corporation                                                       |
+| JOHN MUIR HEALTH                                                            |
+| FEEDING AMERICA                                                             |
+| Summa Health Group Return                                                   |
+| UNIVERSITY OF WISCONSIN FOUNDATION                                          |
+| THE NEW YORK AND PRESBYTERIAN HOSPITAL                                      |
+| WILLIAM BEAUMONT HOSPITAL                                                   |
+| AFFINITY HEALTH PLAN INC                                                    |
+| PROVIDENCE HEALTH & SERVICES - OREGON                                       |
+| Children's Health Care                                                      |
+| BLUE CARE NETWORK OF MICHIGAN                                               |
+| GRADY MEMORIAL HOSPITAL CORPORATION                                         |
+| CareSource                                                                  |
+| THE MOUNT SINAI HOSPITAL                                                    |
+| MVP HEALTH PLAN INC                                                         |
+| KAISER FOUNDATION HEALTH PLANOF THE NORTHWEST                               |
+| AMERICAN CHEMICAL SOCIETY                                                   |
+| Aurora Health Care Inc                                                      |
+| UNIVERSITY HEALTH SYSTEM INC                                                |
+| HENRY FORD HEALTH SYSTEM                                                    |
+| Wells Fargo & Co Employee Benefit Trust                                     |
+| ROBERT WOOD JOHNSON UNIVERSITY HOSPITAL                                     |
+| MEDICA HEALTH PLANS                                                         |
+| THE CLEVELAND CLINIC FOUNDATION GROUP RETURN                                |
+| GENERAL ELECTRIC INSURANCE PLAN TRUST                                       |
+| COMMUNITY HEALTH PLAN OF WASHINGTON                                         |
+| Lenox Hill HospitalC/O NORTH SHORE-LIJ HEALTH SYSTEM                        |
+| Norton Hospitals Inc                                                        |
+| THE METHODIST HOSPITAL                                                      |
+| NORTH SHORE-LONG ISLAND JEWISH HEALTH CARE                                  |
+| WAL-MART STORES INCASSOCIATES' HEALTH & WELFARE TRUST                       |
+| ICAHN SCHOOL OF MEDICINE AT MOUNT SINAI                                     |
+| GOVERNMENT EMPLOYEES HEALTH ASSOCIATION INC                                 |
+| OPTIMA HEALTH PLAN                                                          |
+| SOUTHEASTERN CONFERENCE                                                     |
+| Fallon Community Health Plan Inc                                            |
+| CITY UNIVERSITY CONSTRUCTION FUND                                           |
+| NEIGHBORHOOD HEALTH PLAN INC                                                |
+| YOUNG MEN'S CHRISTIAN ASSOCIATION RETIREMENT FUND                           |
+| HEALTH ALLIANCE PLAN OF MICHIGAN                                            |
+| University Hospitals Health System IncGroup Return                          |
+| INTERNATIONAL BROTHERHOOD OF ELECTRICALWORKERS' PENSION BENEFIT FUND        |
+| DELTA DENTAL OF CALIFORNIA                                                  |
+| University Health Network                                                   |
+| HEALTHPARTNERS INC                                                          |
+| NEW YORK SOCIETY FOR THE RELIEF OF THERUPTURED AND CRIPPLED MAINTAINING THE |
+| Managed Health Inc                                                          |
+| THE RESEARCH FOUNDATION FOR THESTATE UNIVERSITY OF NEW YORK                 |
+| JEWISH COMMUNAL FUND                                                        |
+| TEXAS MUTUAL INSURANCE COMPANY                                              |
+| MODERN WOODMEN OF AMERICA                                                   |
+| MAYO CLINIC                                                                 |
+| WESCOM CENTRAL CREDIT UNIONDBA WESCOM CREDIT UNION                          |
+| PROVIDENCE HEALTH & SERVICES - WASHINGTON                                   |
+| DELTA DENTAL PLAN OF MICHIGAN INC                                           |
+| SUTTER HEALTH                                                               |
+| INOVA HEALTH CARE SERVICES                                                  |
+| SENTARA HOSPITALS                                                           |
+| Adventist Health SystemSunbelt Inc                                          |
+| Mercy Health                                                                |
+| NATL CHRISTIAN CHARITABLE FDN INC                                           |
+| Prairie Meadows Race Track and Casino Inc                                   |
+| KAISER FOUNDATION HEALTH PLAN OF COLORADO                                   |
+| Texas Health Resources                                                      |
+| BJC HEALTH SYSTEM GROUP RETURN                                              |
+| CONFERENCE ON JEWISH MATERIAL CLAIMSAGAINST GERMANY INC                     |
+| SUTTER WEST BAY HOSPITALS                                                   |
+| LINE CONSTRUCTION BENEFIT FUND                                              |
+| INDEPENDENT HEALTH ASSOCIATION INC                                          |
+| HARVARD PILGRIM HEALTH CARE INC                                             |
+| MERIDIAN HEALTH SYSTEM INC - SUBORDINATES                                   |
+| Riverside Healthcare Association Inc Group                                  |
+| NORTH SHORE UNIVERSITY HOSPITALC/O NORTH SHORE-LIJ HEALTH SYSTEM            |
+| Advocate Health And Hospitals Corp                                          |
+| AMERICAN HEART ASSOCIATION INC                                              |
+| Arizona State University Foundation For A NewAmerican University            |
+| Albany Medical Center Group Organization                                    |
+| UNITED FOOD & COMMERCIAL WORKERS UNIONS& FOOD EMPLOYERS BENEFIT FUND        |
+| UNIVERSITY OF TORONTO                                                       |
+| SILICON VALLEY COMMUNITY FOUNDATION                                         |
+| ST VINCENT HOSPITAL AND HEALTH CARE CENTER INC                              |
+| The Rotary Foundation of Rotary International                               |
+| DePaul University                                                           |
+| World Vision Inc                                                            |
+| OhioHealth Corporation Group Return                                         |
+| THE CHANCELLOR MASTER AND SCHOLARSOF THE UNIVERSITY OF CAMBRIDGE            |
+| ST LUKE'S-ROOSEVELT HOSPITAL CENTER                                         |
+| NATIONAL RURAL UTILITIES COOPERATIVEFINANCE CORPORATION                     |
+| COMMUNITY FOUNDATION OF NORTHWEST INDIANAINC                                |
+| NORTH CAROLINA BAPTIST HOSPITAL                                             |
+| HAWAI'I PACIFIC HEALTH GROUP RETURN                                         |
+| SCHWAB CHARITABLE FUND                                                      |
+| METROPOLITAN MUSEUM OF ART                                                  |
+| CARNEGIE MELLON UNIVERSITY                                                  |
+| Massachusetts Institute of Technology                                       |
+| UPMC GROUP                                                                  |
+| THE MEDSTAR-GEORGETOWN MEDICAL CENTER INC                                   |
+| DUKE UNIVERSITY HEALTH SYSTEM INC                                           |
+| CAMPBELL UNIVERSITY INC                                                     |
+| THE NEW SCHOOL                                                              |
+| CHILDREN'S HOSPITAL LOS ANGELES                                             |
+| THE CHILDREN'S HOSPITAL OF PHILADELPHIA                                     |
+| YORK HOSPITAL                                                               |
+| William Marsh Rice University                                               |
+| TRUSTEES OF BOSTON UNIVERSITY                                               |
+| BILLINGS CLINIC                                                             |
+| HARVARD PRIVATE CAPITAL REALTY INCC/O HARVARD MANAGEMENT COMPANY INC        |
+| UNIVERSITY OF DAYTON                                                        |
+| SYRACUSE UNIVERSITY                                                         |
+| PEACEHEALTH                                                                 |
+| NORTHSIDE HOSPITAL INC                                                      |
+| CHRISTIANA CARE HEALTH SERVICES INC                                         |
+| COMMUNICATIONS WORKERS OF AMERICA AFL-CIO CLC                               |
+| Our Lady of the Lake Hospital Inc                                           |
+| Cornell University                                                          |
+| The Chancellor Master & Scholars of the University of Oxford                |
+| LIBERTY UNIVERSITY INC                                                      |
+| NATIONAL ASSOCIATION OF LETTER CARRIERS                                     |
+| COLORADO SEMINARY                                                           |
+| TEXAS CHRISTIAN UNIVERSITY                                                  |
+| UNIVERSITY OF ROCHESTER                                                     |
+| Indiana University Foundation                                               |
+| American National Red Cross & Its ConstituentChapters and Branches          |
+| PENNSYLVANIA EMPLOYEES BENEFIT TRUST FUND                                   |
+| THE COMMON FUND FOR NONPROFIT ORGANIZATIONS                                 |
+| Trustees of the University of Pennsylvania                                  |
+| Lancaster General Hospital                                                  |
+| LEHIGH UNIVERSITY                                                           |
+| WILLIS-KNIGHTON MEDICAL CENTER                                              |
+| The Queen's Medical Center                                                  |
+| TRUSTEES OF BOSTON COLLEGE                                                  |
+| President and Fellows of Harvard College                                    |
+| YALE UNIVERSITY                                                             |
+| PARTNERSHIP FOR SUPPLY CHAIN MANAGEMENT                                     |
+| FROEDTERT HEALTH INC                                                        |
+| UNIVERSITY OF CHICAGO                                                       |
+| NATURE CONSERVANCY                                                          |
+| SOUTHERN METHODIST UNIVERSITY                                               |
+| THE ROCKEFELLER UNIVERSITY                                                  |
+| SWARTHMORE COLLEGE                                                          |
+| AMERICAN LEBANESE SYRIAN ASSOCIATED CHARITIES INC                           |
+| Vanderbilt University                                                       |
+| University of Chicago Medical Ctr                                           |
+| Scott & White Memorial Hospital                                             |
+| Christus Health                                                             |
+| LOYOLA UNIVERSITY MEDICAL CENTER                                            |
+| Lehigh Valley Hospital                                                      |
+| The Nebraska Medical Center                                                 |
+| The Trustees of Princeton University                                        |
+| SAINT LOUIS UNIVERSITY                                                      |
+| GEISINGER HEALTH PLAN                                                       |
+| Baylor College of Medicine                                                  |
+| Sanford Group Return                                                        |
+| Ascension Health Alliance                                                   |
+| UNIVERSITY OF PITTSBURGH                                                    |
+| POMONA COLLEGE                                                              |
+| GEORGETOWN UNIVERSITY                                                       |
+| THE TRUSTEES OF COLUMBIA UNIVERSITYIN THE CITY OF NEW YORK                  |
+| The George Washington University                                            |
+| Michigan Catastrophic Claims Association                                    |
+| CEDARS-SINAI MEDICAL CENTER                                                 |
+| University of Southern California                                           |
+| FROEDTERT MEMORIAL LUTHERAN HOSPITAL INC                                    |
+| ALBERT EINSTEIN HEALTHCARE NETWORK GROUPLETTER RULING                       |
+| Mary Hitchcock Memorial Hospital                                            |
+| GEISINGER MEDICAL CENTER                                                    |
+| HARVARD MANAGEMENT PRIVATE EQUITY CORPC/O HARVARD MANAGEMENT COMPANY INC    |
+| MILTON HERSHEY SCHOOL AND SCHOOL TRUST                                      |
+| STATE EMPLOYEES' CREDIT UNION                                               |
+| Fordham University                                                          |
+| Trustees for Harvard University                                             |
+| UC Healthcare System                                                        |
+| WASHINGTON HOSPITAL CENTER CORPORATION                                      |
+| The Children's Mercy Hospital                                               |
+| Memorial Hermann Health System                                              |
+| Catholic Health Initiatives                                                 |
+| CHI St Luke's Health Baylor College of Medicine Medical Center              |
+| LOMA LINDA UNIVERSITY                                                       |
+| DUKE UNIVERSITY                                                             |
+| SHANDS TEACHING HOSPITAL AND CLINICS INC                                    |
+| Brown University                                                            |
+| NORTHEASTERN UNIVERSITY                                                     |
+| Rush University Medical Center                                              |
+| Catholic Health Initiatives Colorado                                        |
+| MOUNT CARMEL HEALTH SYSTEM                                                  |
+| The Medical College of Wisconsin Inc                                        |
+| UPMC                                                                        |
+| UNIVERSITY OF MARYLAND MEDICAL SYSTEM CORP                                  |
+| Temple University Hospital Inc                                              |
+| YESHIVA UNIVERSITY                                                          |
+| THE UNIVERSITY OF WESTERN ONTARIO                                           |
+| THE ADMINISTRATORS OF THE TULANE EDUCATIONAL FUND                           |
+| Edward Hospital                                                             |
+| PINNACLE HEALTH HOSPITALS                                                   |
+| Spectrum Health System Group Return                                         |
+| Children's Hospital                                                         |
+| Baylor University Medical Center                                            |
+| Children's Hospital Medical Center                                          |
+| NATIONAL PHILANTHROPIC TRUST                                                |
+| JOHNS HOPKINS UNIVERSITY                                                    |
+| THE CHILDREN'S HOSPITAL OF PHILADELPHIAFOUNDATION                           |
+| MERCY HOSPITALS EAST COMMUNITIES                                            |
+| University of Miami                                                         |
+| Main Line Hospitals Inc                                                     |
+| OhioHealth Corporation                                                      |
+| TRINITY HEALTH CORPORATION                                                  |
+| Franciscan Health System                                                    |
+| AMERICAN BIBLE SOCIETY                                                      |
+| DREXEL UNIVERSITY                                                           |
+| University of Notre Dame du Lac                                             |
+| TRUSTEES OF THE ESTATE OF BERNICE PAUAHIBISHOP                              |
+| CALIFORNIA ACADEMY OF SCIENCES                                              |
+| CASE WESTERN RESERVE UNIVERSITY                                             |
+| MEMORIAL HEALTH SERVICES GROUP RETURN                                       |
+| TRINITY HEALTH - MICHIGAN                                                   |
+| THE JOHNS HOPKINS HOSPITAL                                                  |
+| Trustees of Dartmouth College                                               |
+| University of Delaware                                                      |
+| Saint Francis Hospital Inc                                                  |
+| Temple University - Of the Commonwealth System of Higher Education          |
+| BUILDING SERVICE 32BJ HEALTH FUND                                           |
+| WASHINGTON UNIVERSITY                                                       |
+| NORTH CAROLINA ELECTRIC MEMBERSHIPCORPORATION                               |
+| GLOBAL HEALTH SOLUTIONS INC                                                 |
+| HOAG MEMORIAL HOSPITAL PRESBYTERIAN                                         |
+| MICHIGAN EDUCATION SPECIAL SERVICES ASSN                                    |
+| Trustees of Tufts College                                                   |
+| THE HOWARD UNIVERSITY                                                       |
+| Mercy Hospital Springfield                                                  |
+| DELTA PILOTS DISABILITY AND SURVIVOR TRUST                                  |
+| Howard Hughes Medical Institute                                             |
+| Food For the Poor Inc                                                       |
+| PORTERCARE ADVENTIST HEALTH SYSTEM                                          |
+| Patient Access Network Foundation                                           |
+| REX HOSPITAL INC                                                            |
+| City of Hope National Medical Center                                        |
+| Marshfield Clinic Inc                                                       |
+| MOSES H CONE MEMORIAL HOSPITALOPERATING CORPORATION                         |
+| Rhode Island Hospital                                                       |
+| BOSTON MEDICAL CENTER                                                       |
+| NorthShore University HealthSystem                                          |
+| Orlando Health Inc                                                          |
+| North Mississippi Medical Center Inc                                        |
+| THE MITRE CORPORATION                                                       |
+| CUMBERLAND COUNTY HOSPITAL SYSTEM INC                                       |
+| PALMETTO HEALTH                                                             |
+| CARILION MEDICAL CENTER                                                     |
+| Partners HealthCare System Inc & AffiliatesGroup Return                     |
+| Hartford Hospital                                                           |
+| OSF HEALTHCARE SYSTEM                                                       |
+| WakeMed                                                                     |
+| NYU HOSPITALS CENTER                                                        |
+| ASANTE                                                                      |
+| BETH ISRAEL DEACONESS MEDICAL CENTER                                        |
+| Children's Hospital Corporation                                             |
+| CENTRAL ELECTRIC POWER COOPERATIVE INC                                      |
+| Northwestern Memorial HealthCare                                            |
+| STANFORD HEALTH CARE                                                        |
+| Baptist Healthcare System Inc                                               |
+| FLORIDA HEALTH SCIENCES CENTER INC                                          |
+| NEW YORK UNIVERSITY                                                         |
+| FRESNO COMMUNITY HOSPITAL AND MEDICAL CENTER                                |
+| Ann & Robert H Lurie Childrens Hospital ofChicago                           |
+| Northwestern University                                                     |
+| METROPLUS HEALTH PLAN INC                                                   |
+| Northwestern Memorial Healthcare Group                                      |
+| SHRINERS HOSPITALS FOR CHILDREN                                             |
+| Lucile Salter Packard Children'sHospital at Stanford                        |
+| THE BOARD OF TRUSTEES OF THE LELAND STANFORDJUNIOR UNIVERSITY               |
+| BAPTIST HOSPITAL OF MIAMI INC                                               |
+| Baystate Medical Center Inc                                                 |
+| Pitt County Memorial Hospital Inc                                           |
+| Sharp Memorial Hospital                                                     |
+| GUARANTY ASSOCIATION BENEFITS COMPANY                                       |
+| UMASS MEMORIAL HEALTH CARE INC & AFFILIATES                                 |
+| BATTELLE MEMORIAL INSTITUTE                                                 |
+| Eastern Maine Healthcare Systems EMMCEastern Maine Medical Center           |
+| METHODIST HOSPITALS OF DALLAS &PAVILION PROPERTIES                          |
+| Dana-Farber Cancer Institute Inc                                            |
+| California Institute of Technology                                          |
+| WEA INSURANCE CORPORATION                                                   |
+| WORKERS' COMPENSATION REINSURANCE ASSOCIATION                               |
+| NEW YORK STATE CATHOLIC HEALTH PLANINC                                      |
+| LESTER E COX MEDICAL CENTERS                                                |
+| Smithsonian Institution                                                     |
+| MAINE MEDICAL CENTER                                                        |
+| UNITED STUDENT AID FUNDS INC                                                |
+| Delta Dental of Washington                                                  |
+| BAPTIST HEALTH SOUTH FLORIDAINC                                             |
+| EMORY GROUP RETURN                                                          |
+| CYSTIC FIBROSIS FOUNDATION- HEADQUARTERS                                    |
+| MEMORIAL HEALTH SYSTEM GROUP                                                |
+| NATIONAL COLLEGIATE ATHLETIC ASSOCIATION                                    |
+| EMORY UNIVERSITY                                                            |
+| Scripps Health                                                              |
+| THE UNIVERSITY OF VERMONT MEDICAL CENTER INC                                |
+| MCLEOD REGIONAL MEDICAL CENTER OFTHE PEE DEE INC                            |
+| YALE-NEW HAVEN HOSPITAL                                                     |
+| BOSTON MEDICAL CENTER HEALTH PLAN INC                                       |
+| SEATTLE CHILDREN'S HOSPITAL                                                 |
+| UCare Minnesota                                                             |
+| DIGNITY HEALTH                                                              |
+| RADY CHILDREN'S HOSPITAL - SAN DIEGO                                        |
+| Southern Baptist Hospital of Florida Inc                                    |
+| Sharp HealthCare                                                            |
+| St Luke's Regional Medical Center                                           |
++-----------------------------------------------------------------------------+
+404 rows in set (0.31 sec)
 
-mysql> select count(distinct ein) from taxdata where purpose LIKE "%toy%";
+mysql> select count(distinct ein) from taxdata where purpose LIKE "% toy %" or purpose LIKE "% toys %" or purpose LIKE "% toy. %" or  purpose LIKE "% toys. %" or purpose LIKE "toy %" or purpose LIKE "toys %" or purpose LIKE "% toy." or  purpose LIKE "% toys.";
 +---------------------+
 | count(distinct ein) |
 +---------------------+
-|                 359 |
+|                 261 |
 +---------------------+
-1 row in set (2.54 sec)
+1 row in set (7.07 sec)
 
 mysql> select count(1) from taxdata where ptname LIKE "%smith%" and revenue IS NOT NULL and revenue != 0;
 +----------+
