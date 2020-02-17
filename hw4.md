@@ -937,7 +937,13 @@ For questions related to the *ro_employee database* database,
 +------------+---------------+--------+-----------------+
 ```
 
-I didn't hear anything about the promotion
+I didn't hear anything about the promotion of Raj and quite intrested in talking over drinks next week!  
+
+Best,  
+
+Xinhao Liao  
+Datebase Team Member    
+Borromean Digitial  
 
 
 --  
