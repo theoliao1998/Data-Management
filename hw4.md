@@ -4,7 +4,7 @@
 
 Hi Sarah,  
 
-I am more than willing to help you. The information you need are given below with the full query lists appended in the end. Also, the documentation is appended in *documentation.pdf*.  
+I am more than willing to help you. The information you need are given below (except for the quey for *ro_research1* appended in *ro_research1_query.pdf*) with the full query lists appended in the end. Also, the documentation is appended in *documentation.pdf*.  
 
 To find the recipe titles that are either a vegetable or a salad, we can use the query `select r.RecipeTitle from Recipes r join Recipe_Classes r_c on r.RecipeClassID=r_c.RecipeClassID where r_c.RecipeClassDescription in ("Vegetable", "Salad");`, which gives the results as follows.  
 ```
