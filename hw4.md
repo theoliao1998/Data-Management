@@ -937,6 +937,9 @@ For questions related to the *ro_employee database* database,
 +------------+---------------+--------+-----------------+
 ```
 
+I didn't hear anything about the promotion
+
+
 --  
 <span style="color:blue">Database query list</span>   
 ```
