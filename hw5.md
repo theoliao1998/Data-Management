@@ -86,6 +86,7 @@ From the research1 database
 | f9f67f5beddc05e72d4c1715c26df95d |                             NULL |
 +----------------------------------+----------------------------------+
 ```  
+
 2)  For the user with the name 'f9f67f5beddc05e72d4c1715c26df95d', I tried to query the average number of minutes he/she sleeps each month with `select MONTH(fitbit_date) as month, AVG(fitbit_timeinbed) as "average number of minutes of sleep" from fitbit_sleep where user_id in (select uid from users_field_data where name='f9f67f5beddc05e72d4c1715c26df95d') group by month;`. But that gives me an empty set, which means that there is no sleep data on this user recorded.  
 
 4) A listing of each user_id and the if they met their goal on average per month is shown below, where NULL means no records, and for dolumn "whether meet the goal on average", 1 implies that the goal is met while 0 means the goal is not met.  
