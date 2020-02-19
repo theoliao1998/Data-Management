@@ -7,7 +7,7 @@ Hi Lawrence,
 You must have had a great time in Ireland! And I am more than willing to answer these questions for you. The query list id appended in the end.  
 
 From the employee database  
-1) The number of employees born in each month is listed below.  
+(1) The number of employees born in each month is listed below.  
 ```
 +-------+--------------------------+
 | month | number of employees born |
@@ -26,7 +26,7 @@ From the employee database
 |    12 |                    25326 |
 +-------+--------------------------+
 ```  
-3) The average salary by job title currently for all staff is listed as follows.  
+(3) The average salary by job title currently for all staff is listed as follows.  
 ```
 +--------------------+------------------------+
 | title              | current average salary |
@@ -40,7 +40,7 @@ From the employee database
 | Manager            |             77723.6667 |
 +--------------------+------------------------+
 ```  
-4) The average salary for all folks that are currently employed by year of hire is listed as follows.  
+(4) The average salary for all folks that are currently employed by year of hire is listed as follows.  
 ```
 +--------------+------------------------+
 | year of hire | current average salary |
@@ -65,7 +65,7 @@ From the employee database
 ```  
   
 From the research1 database  
-1) For the average number of steps for July by username, a list is give as below where NULL indicates that there's no record for the user in July.  
+(1) For the average number of steps for July by username, a list is give as below where NULL indicates that there's no record for the user in July.  
 ```
 +----------------------------------+----------------------------------+
 | username                         | average number of steps for July |
@@ -87,9 +87,9 @@ From the research1 database
 +----------------------------------+----------------------------------+
 ```  
 
-2)  For the user with the name 'f9f67f5beddc05e72d4c1715c26df95d', I tried to query the average number of minutes he/she sleeps each month with `select MONTH(fitbit_date) as month, AVG(fitbit_timeinbed) as "average number of minutes of sleep" from fitbit_sleep where user_id in (select uid from users_field_data where name='f9f67f5beddc05e72d4c1715c26df95d') group by month;`. But that gives me an empty set, which means that there is no sleep data on this user recorded.  
+(2) For the user with the name 'f9f67f5beddc05e72d4c1715c26df95d', I tried to query the average number of minutes he/she sleeps each month with `select MONTH(fitbit_date) as month, AVG(fitbit_timeinbed) as "average number of minutes of sleep" from fitbit_sleep where user_id in (select uid from users_field_data where name='f9f67f5beddc05e72d4c1715c26df95d') group by month;`. But that gives me an empty set, which means that there is no sleep data on this user recorded.  
 
-4) A listing of each user_id and the if they met their goal on average per month is shown below, where NULL means no records, and for dolumn "whether meet the goal on average", 1 implies that the goal is met while 0 means the goal is not met.  
+(4) A listing of each user_id and the if they met their goal on average per month is shown below, where NULL means no records, and for dolumn "whether meet the goal on average", 1 implies that the goal is met while 0 means the goal is not met.  
 ```
 +---------+-------+----------------------------------+
 | user_id | month | whether meet the goal on average |
@@ -137,7 +137,7 @@ From the research1 database
 +---------+-------+----------------------------------+
 ```
 
-5) For users who get more than 8 hours of sleep, the list is too long (with 172 rows). A sample of the user_id's, the names and the days is shown as follows, which is obtained from the query `select s.user_id, u.name as user_name, s.fitbit_date from fitbit_sleep s left join users_field_data u on u.uid=s.user_id where (fitbit_timeinbed/60) > 8 order by rand() limit 10;`.  
+(5) For users who get more than 8 hours of sleep, the list is too long (with 172 rows). A sample of the user_id's, the names and the days is shown as follows, which is obtained from the query `select s.user_id, u.name as user_name, s.fitbit_date from fitbit_sleep s left join users_field_data u on u.uid=s.user_id where (fitbit_timeinbed/60) > 8 order by rand() limit 10;`.  
 ```
 +---------+----------------------------------+-------------+
 | user_id | user_name                        | fitbit_date |
