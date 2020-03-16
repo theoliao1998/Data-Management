@@ -1,11 +1,11 @@
 **From:** Xinhao Liao  
-**To:** Lawrence Summerset  
+**To:** Raj
 
 Hi Raj,  
 
 I hope you have a good week. I have completed the work for this week and will show it as follows.
 
-For the newspaper website, I design the database and create a ER diagram for it as follows based on the description. For some tables like *Stories*, we might also add some extra fields like **title**,**publish_date** if needed. But the overall structure should remain the same.
+For the newspaper website, I design the database and create a ER diagram for it as follows based on the description. For some tables like *Stories*, we might also add some extra fields like **title**, **publish_date** if needed. But the overall structure should remain the same.
 ![image](https://user-images.githubusercontent.com/53862461/76786004-d4b5fb80-678c-11ea-9708-527191f10f51.png)
 
 For the new circulation system of a library, a basic design according to the description is given below. Here the book refers to a book entity, and more details about the book might be added (possibly to extra tables) if needed.
