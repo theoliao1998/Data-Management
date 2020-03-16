@@ -11,6 +11,9 @@ For the newspaper website, I design the database and create a ER diagram for it 
 For the new circulation system of a library, a basic design according to the description is given below. Here the book refers to a book entity, and more details about the book might be added (possibly to extra tables) if needed.
 ![image](https://user-images.githubusercontent.com/53862461/76788870-1f864200-6792-11ea-9a01-3c7a5a81393b.png)
 
+And for the internal employee training information, the database is designed according to the description and given below. 
+![image](https://user-images.githubusercontent.com/53862461/76792528-9e32ad80-6799-11ea-81c5-c3f6f8ee06ea.png)
+
 To copy the database, I first export the database with the following command in my terminal outside of any mysql shell
 ```shell
 mysqldump -h 34.68.154.83 --port 10586 -u theoliao-rw -pXXXXX world > mars.sql 
