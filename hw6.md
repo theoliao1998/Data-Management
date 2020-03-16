@@ -32,5 +32,5 @@ mysql -h 34.68.154.83 --port 10586 -u theoliao-rw -pXXXXX mars < mars.sql
 ```
 Then, the database is successfully copied, and we can use `use mars` in mysql shell and see the same tables that are in world now.  
 
-Best regards,
+Best regards,  
 Xinhao Liao
