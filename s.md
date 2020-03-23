@@ -1,4 +1,16 @@
+**From:** Xinhao Liao  
+**To:** Lawrence  
 
+Hi Lawrence,  
+
+I hope you have a good week. I have created all the databases and tables needed. The queries are appended in the end. And database exports of each database are also dumped and attached.
+
+Best,
+Xinhao Liao
+
+
+--  
+Database query list  
 ```
 mysql> create database newspaper_website;
 Query OK, 1 row affected (0.04 sec)
@@ -113,4 +125,7 @@ mysql> CREATE TABLE `employee_training`.`Registered_records` (
     ->   `cancelled_date` DATETIME NULL,
     ->   CONSTRAINT pk PRIMARY KEY (`ID`));
 Query OK, 0 rows affected (0.13 sec)
+
+mysql> exit
+Bye
 ```
