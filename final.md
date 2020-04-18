@@ -137,7 +137,7 @@ select
          count(1) = 
          (
             select
-               count(*) as c 
+               count(1) 
             from
                Criteria_Info
          )
