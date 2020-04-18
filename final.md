@@ -109,7 +109,7 @@ having
 26 rows in set (0.03 sec)
 ```
 
-3. List the hospitals in Michigan whose criteria comparisons are all above or the same as the national average.
+3. For each overall rating group, how likely does a hospital have the 7 criteria all above or the same as the national average?
 ```sql
 select
    h.Overall_Rating,
