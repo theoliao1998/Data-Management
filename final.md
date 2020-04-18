@@ -7,7 +7,7 @@ use HospitalInfo;
 1. What are the full addresses of the top5 hospitals in MI?
 ```sql
 select
-   CONCAT(h.Address, ', ', c1.CityName, ', ', c2.CountyName, ',', s.StateName, ' ', h.ZIP_Code) as Full_Address 
+   h.Hospital_Name, CONCAT(h.Address, ', ', c1.CityName, ', ', c2.CountyName, ',', s.StateName, ' ', h.ZIP_Code) as Full_Address 
 from
    Hospitals h 
    join
@@ -24,15 +24,15 @@ where
 order by
    h.Overall_Rating desc limit 5;
 
-+----------------------------------------------------+
-| Full_Address                                       |
-+----------------------------------------------------+
-| 416 CONNABLE AVE, PETOSKEY, EMMET, MI 49770        |
-| 775 S MAIN ST, CHELSEA, WASHTENAW, MI 48118        |
-| 602 MICHIGAN AVE, HOLLAND, OTTAWA, MI 49423        |
-| 615 S BOWER STREET, GREENVILLE, MONTCALM, MI 48838 |
-| 200 N MADISON, MARSHALL, CALHOUN, MI 49068         |
-+----------------------------------------------------+
++---------------------------------+---------------------------------------------------+
+| Hospital_Name                   | Full_Address                                      |
++---------------------------------+---------------------------------------------------+
+| MCLAREN - NORTHERN MICHIGAN     | 416 CONNABLE AVE, PETOSKEY, EMMET,MI 49770        |
+| ST JOSEPH MERCY CHELSEA         | 775 S MAIN ST, CHELSEA, WASHTENAW,MI 48118        |
+| HOLLAND COMMUNITY HOSPITAL      | 602 MICHIGAN AVE, HOLLAND, OTTAWA,MI 49423        |
+| SPECTRUM HEALTH UNITED HOSPITAL | 615 S BOWER STREET, GREENVILLE, MONTCALM,MI 48838 |
+| OAKLAWN HOSPITAL                | 200 N MADISON, MARSHALL, CALHOUN,MI 49068         |
++---------------------------------+---------------------------------------------------+
 5 rows in set (0.04 sec)
 ```
 
