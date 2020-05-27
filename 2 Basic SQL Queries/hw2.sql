@@ -100,9 +100,17 @@ select sum(f.capacity) as capacity
     from FLIGHTS f, MONTHS m
     where f.month_id=m.mid and
     ((f.origin_city='Seattle WA' and f.dest_city='San Francisco CA') or 
-    (f.dest_city='San Francisco CA' and f.origin_city='New York NY')) and
+    (f.dest_city='San Francisco CA' and f.origin_city='Seattle WA')) and
     m.month='July' and
-    f.day_of_month=10;
+    f.day_of_month='10';
+
+select sum(f.capacity) as capacity
+    from FLIGHTS f, MONTHS m
+    where f.month_id=m.mid and
+    ((f.origin_city='Seattle WA' and f.dest_city='San Francisco CA') or 
+    (f.dest_city='Seattle WA' and f.origin_city='San Francisco CA')) and
+    m.month='July' and
+    f.day_of_month='10';
 
 -- q8
 -- Compute the total departure delay of each airline
