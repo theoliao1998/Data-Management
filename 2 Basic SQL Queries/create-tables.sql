@@ -1,3 +1,18 @@
+CREATE TABLE IF NOT EXISTS CARRIERS (
+    cid varchar(7) PRIMARY KEY,
+    name varchar(83)
+);
+
+CREATE TABLE IF NOT EXISTS MONTHS (
+    mid int PRIMARY KEY, 
+    month varchar(9)
+);
+
+CREATE TABLE IF NOT EXISTS WEEKDAYS (
+    did int PRIMARY KEY, 
+    day_of_week varchar(9)
+);
+
 CREATE TABLE IF NOT EXISTS FLIGHTS (
 	fid int PRIMARY KEY, 
     month_id int
@@ -23,20 +38,6 @@ CREATE TABLE IF NOT EXISTS FLIGHTS (
 
 );
 
-CREATE TABLE IF NOT EXISTS CARRIERS (
-    cid varchar(7) PRIMARY KEY,
-    name varchar(83)
-);
-
-CREATE TABLE IF NOT EXISTS MONTHS (
-    mid int PRIMARY KEY, 
-    month varchar(9)
-);
-
-CREATE TABLE IF NOT EXISTS WEEKDAYS (
-    did int PRIMARY KEY, 
-    day_of_week varchar(9)
-);
 
 PRAGMA foreign_keys=ON;
 
