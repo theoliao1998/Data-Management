@@ -82,17 +82,19 @@ select distinct f2.dest_city as city
 -- query time: 170s
 select distinct f1.dest_city as city
     from FLIGHTS f1
-    where f1.dest_city not in (
-        select distinct f2.dest_city
-        from FLIGHTS f2
-        where f2.origin_city='Seattle WA'
-    ) and 
+    where 
     f1.dest_city not in (
         select distinct f4.dest_city
         from FLIGHTS f3, FLIGHTS f4
         where f3.dest_city=f4.origin_city and
         f3.origin_city='Seattle WA'
-    );
+    ) and 
+    f1.dest_city not in (
+        select f2.dest_city
+        from FLIGHTS f2
+        where f2.origin_city='Seattle WA'
+    )
+    order by city;
 
 -- q6
 -- List the names of carriers that operate flights from Seattle to San Francisco, CA.
