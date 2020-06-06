@@ -1,3 +1,6 @@
+-- sqlite3
+PRAGMA foreign_keys=ON;
+
 CREATE TABLE IF NOT EXISTS CARRIERS (
     cid varchar(7) PRIMARY KEY,
     name varchar(83)
@@ -15,13 +18,10 @@ CREATE TABLE IF NOT EXISTS WEEKDAYS (
 
 CREATE TABLE IF NOT EXISTS FLIGHTS (
 	fid int PRIMARY KEY, 
-    month_id int
-        REFERENCES MONTHS(mid),        -- 1-12
+    month_id int,        -- 1-12
     day_of_month int,    -- 1-31 
-    day_of_week_id int
-        REFERENCES WEEKDAYS(did),  -- 1-7, 1 = Monday, 2 = Tuesday, etc
-    carrier_id varchar(7)
-        REFERENCES CARRIERS(cid),
+    day_of_week_id int,  -- 1-7, 1 = Monday, 2 = Tuesday, etc
+    carrier_id varchar(7),
     flight_num int,
     origin_city varchar(34), 
     origin_state varchar(47), 
@@ -34,12 +34,11 @@ CREATE TABLE IF NOT EXISTS FLIGHTS (
     actual_time int,     -- in mins
     distance int,        -- in miles
     capacity int, 
-    price int            -- in $         
-
+    price int,            -- in $         
+    FOREIGN KEY (month_id) references MONTHS(mid) ON DELETE CASCADE,
+    FOREIGN KEY (day_of_week_id) references WEEKDAYS(did) ON DELETE CASCADE,
+    FOREIGN KEY (carrier_id) references CARRIERS(cid) ON DELETE CASCADE,
 );
-
-
-PRAGMA foreign_keys=ON;
 
 .mode csv
 .import carriers.csv CARRIERS

@@ -1,3 +1,5 @@
+-- SQL Server
+
 -- q1
 -- For each origin city, find the destination city (or cities) with the longest direct flight.
 -- By direct flight, we mean a flight with no intermediate stops. Judge the longest flight in

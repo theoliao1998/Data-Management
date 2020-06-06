@@ -1,3 +1,5 @@
+-- SQL Server
+
 CREATE TABLE CARRIERS (
     cid varchar(7) PRIMARY KEY,
     name varchar(83)
