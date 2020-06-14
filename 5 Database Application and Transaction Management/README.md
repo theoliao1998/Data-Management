@@ -9,7 +9,7 @@ mvn test
 To test a specific folder recursively or a specific file:
 
 ```
-mvn test -Dtest.cases="[folder/file]"
+mvn test -Dtestcases="[folder/file]"
 ```
 
 To test with a specific server credential:
