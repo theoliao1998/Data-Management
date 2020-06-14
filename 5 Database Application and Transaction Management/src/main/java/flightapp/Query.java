@@ -27,7 +27,14 @@ public class Query {
   private static final String TRANCOUNT_SQL = "SELECT @@TRANCOUNT AS tran_count";
   private PreparedStatement tranCountStatement;
 
-  // TODO: YOUR CODE HERE
+  // For table clearing
+  private static final String CLEAR_SQL1 = "DELETE FROM RESERVATIONS";
+  private static final String CLEAR_SQL2 = "DELETE FROM USERS";
+  private PreparedStatement tableClearStatement1;
+  private PreparedStatement tableClearStatement2;
+
+  private boolean isLoggedIn;
+  private String user_name;
 
   public Query() throws SQLException, IOException {
     this(null, null, null, null);
@@ -36,7 +43,8 @@ public class Query {
   protected Query(String serverURL, String dbName, String adminName, String password) throws SQLException, IOException {
     conn = serverURL == null ? openConnectionFromDbConn()
         : openConnectionFromCredential(serverURL, dbName, adminName, password);
-
+    isLoggedIn = false;
+    user_name = null;
     prepareStatements();
   }
 
@@ -103,7 +111,12 @@ public class Query {
    */
   public void clearTables() {
     try {
-      // TODO: YOUR CODE HERE
+      // String searchSQL = "SELECT password, salt FROM USERS " + "WHERE username = \'" + username + "\'";
+
+      tableClearStatement1.executeUpdate();
+      tableClearStatement2.executeUpdate();
+      
+
     } catch (Exception e) {
       e.printStackTrace();
     }
@@ -115,6 +128,8 @@ public class Query {
   private void prepareStatements() throws SQLException {
     checkFlightCapacityStatement = conn.prepareStatement(CHECK_FLIGHT_CAPACITY);
     tranCountStatement = conn.prepareStatement(TRANCOUNT_SQL);
+    tableClearStatement1 = conn.prepareStatement(CLEAR_SQL1);
+    tableClearStatement2 = conn.prepareStatement(CLEAR_SQL2);
     // TODO: YOUR CODE HERE
   }
 
@@ -130,7 +145,40 @@ public class Query {
    */
   public String transaction_login(String username, String password) {
     try {
-      // TODO: YOUR CODE HERE
+      if(isLoggedIn){
+        return "User already logged in\n";
+        
+      }
+      try {
+        String searchSQL = "SELECT password, salt FROM USERS " + "WHERE username = \'" + username + "\'";
+
+        Statement searchStatement = conn.createStatement();
+        ResultSet results = searchStatement.executeQuery(searchSQL);
+        byte[] hash = null;
+        byte[] hash2 = null;
+        byte[] salt = null;
+        while (results.next()) {
+          hash = results.getBytes("password");
+          salt = results.getBytes("salt");
+          KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, HASH_STRENGTH, KEY_LENGTH);
+          SecretKeyFactory factory = null;
+          try {
+            factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
+            hash2 = factory.generateSecret(spec).getEncoded();
+          } catch (NoSuchAlgorithmException | InvalidKeySpecException ex) {
+            throw new IllegalStateException();
+          }
+        }
+        results.close();
+        if(hash != null && Arrays.equals(hash, hash2)){
+          isLoggedIn = true;
+          user_name = username;
+          return String.format("Logged in as %s\n",username);
+        }
+
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }
       return "Login failed\n";
     } finally {
       checkDanglingTransaction();
@@ -150,21 +198,24 @@ public class Query {
    */
   public String transaction_createCustomer(String username, String password, int initAmount) {
     try {
-      if(initAmount < 0){
-        return "Failed to create user. Negative balance.\n";
+      if (initAmount < 0) {
+        return "Failed to create user\n";
       }
 
       // check user name
       try {
-        String unsafeSearchSQL = "SELECT * FROM USERS "
-            + "WHERE username = \'" + username + "\'";
+        String searchSQL = "SELECT * FROM USERS " + "WHERE username = \'" + username + "\'";
 
         Statement searchStatement = conn.createStatement();
-        ResultSet results = searchStatement.executeQuery(unsafeSearchSQL);
+        ResultSet results = searchStatement.executeQuery(searchSQL);
+        boolean fail = false;
         while (results.next()) {
-            return "Failed to create user. Username exists.\n";
+          fail = true;
         }
         results.close();
+        if(fail){
+          return "Failed to create user\n";
+        }
       } catch (SQLException e) {
         e.printStackTrace();
       }
@@ -186,14 +237,14 @@ public class Query {
         throw new IllegalStateException();
       }
       try {
-        String insertSQL = "INSERT INTO USERS (username, password, salt, balance) "
-            + "VALUES (\'" + username + "\', ? , ? , " + initAmount + ")" ;
-        System.out.println(insertSQL);
+        String insertSQL = "INSERT INTO USERS (username, password, salt, balance) " + "VALUES (\'" + username
+            + "\', ? , ? , " + initAmount + ")";
         PreparedStatement insertStatement = conn.prepareStatement(insertSQL);
         insertStatement.setBytes(1, hash);
         insertStatement.setBytes(2, salt);
         insertStatement.executeUpdate();
-        return "User successfully created!";
+        insertStatement.close();
+        return String.format("Created user %s\n", username);
       } catch (SQLException e) {
         e.printStackTrace();
       }
@@ -239,12 +290,6 @@ public class Query {
   public String transaction_search(String originCity, String destinationCity, boolean directFlight, int dayOfMonth,
       int numberOfItineraries) {
     try {
-      // WARNING the below code is unsafe and only handles searches for direct flights
-      // You can use the below code as a starting reference point or you can get rid
-      // of it all and replace it with your own implementation.
-      //
-      // TODO: YOUR CODE HERE
-
       StringBuffer sb = new StringBuffer();
 
       try {

@@ -38,7 +38,7 @@
         <version>3.0.0-M4</version>
         <configuration>
           <systemPropertyVariables>
-            <test.cases>cases</test.cases>
+            <testcases>cases</testcases>
           </systemPropertyVariables>
         </configuration>
       </plugin>

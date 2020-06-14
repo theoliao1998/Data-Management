@@ -205,7 +205,7 @@ public class FlightServiceTest {
    */
   @Parameterized.Parameters
   public static List<String> files() throws IOException {
-    String pathString = System.getProperty("test.cases");
+    String pathString = System.getProperty("testcases");
     Path path = Paths.get(pathString);
     if (Files.isDirectory(path)) {
       try (Stream<Path> paths = Files.walk(path)) {

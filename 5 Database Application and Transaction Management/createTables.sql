@@ -15,6 +15,6 @@ create table RESERVATIONS (reservation_id int IDENTITY(1,1) not null,
                         FOREIGN KEY (flight_id1) REFERENCES FLIGHTS(fid),
                         FOREIGN KEY (flight_id2) REFERENCES FLIGHTS(fid) ON DELETE CASCADE);
 
-CREATE INDEX F_origin ON FLIGHTS(origin_city);
-CREATE INDEX F_dest ON FLIGHTS(dest_city);
-CREATE INDEX F_origin_dest ON FLIGHTS(origin_city, dest_city);
+-- CREATE INDEX F_origin ON FLIGHTS(origin_city);
+-- CREATE INDEX F_dest ON FLIGHTS(dest_city);
+-- CREATE INDEX F_origin_dest ON FLIGHTS(origin_city, dest_city);
