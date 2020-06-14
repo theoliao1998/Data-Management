@@ -3,3 +3,6 @@ target/
 
 # Flight app
 dbconn.properties
+
+.settings
+.vscode
