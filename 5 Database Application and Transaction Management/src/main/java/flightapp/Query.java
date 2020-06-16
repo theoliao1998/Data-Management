@@ -33,6 +33,13 @@ public class Query {
   private PreparedStatement tableClearStatement1;
   private PreparedStatement tableClearStatement2;
 
+  // For search
+  private static final String SearchSQL1 = "SELECT TOP ( ? )" 
+  + ") day_of_month,carrier_id,flight_num,origin_city,dest_city,actual_time,capacity,price " + "FROM Flights "
+  + "WHERE origin_city = ? AND dest_city = ? AND day_of_month = ? ORDER BY actual_time ASC";
+  private PreparedStatement searchStatement1;
+
+
   private boolean isLoggedIn;
   private String user_name;
 
@@ -130,6 +137,7 @@ public class Query {
     tranCountStatement = conn.prepareStatement(TRANCOUNT_SQL);
     tableClearStatement1 = conn.prepareStatement(CLEAR_SQL1);
     tableClearStatement2 = conn.prepareStatement(CLEAR_SQL2);
+    searchStatement1 = conn.prepareStatement(SearchSQL1);
     // TODO: YOUR CODE HERE
   }
 
@@ -291,37 +299,41 @@ public class Query {
       int numberOfItineraries) {
     try {
       StringBuffer sb = new StringBuffer();
+      if(directFlight==true){
+        try{
+          searchStatement1.setInt(1,numberOfItineraries);
+          searchStatement1.setString(2, originCity);
+          searchStatement1.setString(3, destinationCity);
 
-      try {
-        // one hop itineraries
-        String unsafeSearchSQL = "SELECT TOP (" + numberOfItineraries
-            + ") day_of_month,carrier_id,flight_num,origin_city,dest_city,actual_time,capacity,price " + "FROM Flights "
-            + "WHERE origin_city = \'" + originCity + "\' AND dest_city = \'" + destinationCity
-            + "\' AND day_of_month =  " + dayOfMonth + " " + "ORDER BY actual_time ASC";
+          ResultSet oneHopResults = searchStatement1.executeQuery();
 
-        Statement searchStatement = conn.createStatement();
-        ResultSet oneHopResults = searchStatement.executeQuery(unsafeSearchSQL);
+          while (oneHopResults.next()) {
+            int result_dayOfMonth = oneHopResults.getInt("day_of_month");
+            String result_carrierId = oneHopResults.getString("carrier_id");
+            String result_flightNum = oneHopResults.getString("flight_num");
+            String result_originCity = oneHopResults.getString("origin_city");
+            String result_destCity = oneHopResults.getString("dest_city");
+            int result_time = oneHopResults.getInt("actual_time");
+            int result_capacity = oneHopResults.getInt("capacity");
+            int result_price = oneHopResults.getInt("price");
+  
+            sb.append("Day: " + result_dayOfMonth + " Carrier: " + result_carrierId + " Number: " + result_flightNum
+                + " Origin: " + result_originCity + " Destination: " + result_destCity + " Duration: " + result_time
+                + " Capacity: " + result_capacity + " Price: " + result_price + "\n");
+          }
+          oneHopResults.close();
 
-        while (oneHopResults.next()) {
-          int result_dayOfMonth = oneHopResults.getInt("day_of_month");
-          String result_carrierId = oneHopResults.getString("carrier_id");
-          String result_flightNum = oneHopResults.getString("flight_num");
-          String result_originCity = oneHopResults.getString("origin_city");
-          String result_destCity = oneHopResults.getString("dest_city");
-          int result_time = oneHopResults.getInt("actual_time");
-          int result_capacity = oneHopResults.getInt("capacity");
-          int result_price = oneHopResults.getInt("price");
-
-          sb.append("Day: " + result_dayOfMonth + " Carrier: " + result_carrierId + " Number: " + result_flightNum
-              + " Origin: " + result_originCity + " Destination: " + result_destCity + " Duration: " + result_time
-              + " Capacity: " + result_capacity + " Price: " + result_price + "\n");
+        } catch (SQLException e){
+          e.printStackTrace();
         }
-        oneHopResults.close();
-      } catch (SQLException e) {
-        e.printStackTrace();
+        if(sb.length() == 0){
+          return "No flights match your selection\n";
+        }
+        return sb.toString();
+      } else {
+        return null;
       }
 
-      return sb.toString();
     } finally {
       checkDanglingTransaction();
     }
