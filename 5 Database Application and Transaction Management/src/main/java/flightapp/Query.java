@@ -30,14 +30,8 @@ public class Query {
   // For table clearing
   private static final String CLEAR_SQL1 = "DELETE FROM RESERVATIONS";
   private static final String CLEAR_SQL2 = "DELETE FROM USERS";
-  private static final String DROP_INDEX_SQL1 = "DROP INDEX F_origin ON FLIGHTS";
-  private static final String DROP_INDEX_SQL2 = "DROP INDEX F_dest ON FLIGHTS";
-  private static final String DROP_INDEX_SQL3 = "DROP F_origin_dest ON FLIGHTS";
   private PreparedStatement tableClearStatement1;
   private PreparedStatement tableClearStatement2;
-  private PreparedStatement dropIndexStatement1;
-  private PreparedStatement dropIndexStatement2;
-  private PreparedStatement dropIndexStatement3;
 
   // For login
   private static final String CHECK_USER_SQL = "SELECT password, salt FROM USERS WHERE username = ?";
@@ -47,13 +41,29 @@ public class Query {
   private static final String CREATE_USER_SQL = "INSERT INTO USERS (username, password, salt, balance) VALUES (?, ? , ? , ?)";
   private PreparedStatement createUserStatement;
 
-
   // For search
-  private static final String SearchSQL1 = "SELECT TOP ( ? )" 
-  + ") day_of_month,carrier_id,flight_num,origin_city,dest_city,actual_time,capacity,price " + "FROM Flights "
-  + "WHERE origin_city = ? AND dest_city = ? AND day_of_month = ? ORDER BY actual_time ASC";
+  private static final String SEARCH_SQL1 = "SELECT TOP ( ? )"
+      + " fid,day_of_month,carrier_id,flight_num,origin_city,dest_city,actual_time,capacity,price " + "FROM Flights "
+      + "WHERE origin_city = ? AND dest_city = ? AND day_of_month = ? AND canceled = 0 ORDER BY actual_time ASC";
+  private static final String SEARCH_SQL2 = "select * from (select TOP ( ? ) * from " + "(select 1 as num, F.actual_time as actual_time, "
+      + " F.fid as fid1,  F.day_of_month as d_o_m1, F.carrier_id as c_i1, "
+      + "   F.flight_num as f_n1, F.origin_city as o_c1, " + "   F.dest_city as d_c1,  F.capacity as c1, F.price as p1, F.actual_time as t1,"
+      + " null as fid2,  null as d_o_m2, null as c_i2, " + "   null as f_n2, null as o_c2, "
+      + "   null as d_c2,  null as c2, null as p2, null as t2 " + "   from Flights F"
+      + "   where F.origin_city = ? and F.dest_city = ?" + "   AND F.day_of_month = ? AND F.canceled = 0" + " UNION "
+      + " select 2 as num, (F1.actual_time + F2.actual_time) as actual_time, "
+      + "   F1.fid as fid1, F1.day_of_month as d_o_m1, F1.carrier_id as c_i1, "
+      + "   F1.flight_num as f_n1, F1.origin_city as o_c1, "
+      + "   F1.dest_city as d_c1,  F1.capacity as c1, F1.price as p1, F1.actual_time as t1, "
+      + "   F2.fid as fid2, F2.day_of_month as d_o_m2, F2.carrier_id as c_i2, "
+      + "   F2.flight_num as f_n2, F2.origin_city as o_c2, "
+      + "   F2.dest_city as d_c2,  F2.capacity as c2, F2.price as p2, F2.actual_time as t2 " + "   FROM Flights F1, Flights F2 "
+      + "   WHERE F1.dest_city = F2.origin_city and " + "       F1.origin_city = ? and F2.dest_city = ? "
+      + "       AND F1.day_of_month = ? and F2.day_of_month = ?"
+      + " AND F1.canceled = 0 AND F2.canceled = 0 AND F1.month_id = F2.month_id"
+      + ") as t " + "order by num, actual_time ASC) as m order by actual_time";
   private PreparedStatement searchStatement1;
-
+  private PreparedStatement searchStatement2;
 
   private boolean isLoggedIn;
   private String user_name;
@@ -133,7 +143,7 @@ public class Query {
    */
   public void clearTables() {
     try {
-      
+
       tableClearStatement1.executeUpdate();
       tableClearStatement2.executeUpdate();
 
@@ -150,12 +160,11 @@ public class Query {
     tranCountStatement = conn.prepareStatement(TRANCOUNT_SQL);
     tableClearStatement1 = conn.prepareStatement(CLEAR_SQL1);
     tableClearStatement2 = conn.prepareStatement(CLEAR_SQL2);
-    searchStatement1 = conn.prepareStatement(SearchSQL1);
+    searchStatement1 = conn.prepareStatement(SEARCH_SQL1);
+    searchStatement2 = conn.prepareStatement(SEARCH_SQL2);
     checkUserStatement = conn.prepareStatement(CHECK_USER_SQL);
     createUserStatement = conn.prepareStatement(CREATE_USER_SQL);
-    dropIndexStatement1 = conn.prepareStatement(DROP_INDEX_SQL1);
-    dropIndexStatement2 = conn.prepareStatement(DROP_INDEX_SQL2);
-    dropIndexStatement3 = conn.prepareStatement(DROP_INDEX_SQL3);
+
     // TODO: YOUR CODE HERE
   }
 
@@ -171,9 +180,9 @@ public class Query {
    */
   public String transaction_login(String username, String password) {
     try {
-      if(isLoggedIn){
+      if (isLoggedIn) {
         return "User already logged in\n";
-        
+
       }
       try {
         checkUserStatement.setString(1, username);
@@ -194,10 +203,10 @@ public class Query {
           }
         }
         results.close();
-        if(hash != null && Arrays.equals(hash, hash2)){
+        if (hash != null && Arrays.equals(hash, hash2)) {
           isLoggedIn = true;
           user_name = username;
-          return String.format("Logged in as %s\n",username);
+          return String.format("Logged in as %s\n", username);
         }
 
       } catch (SQLException e) {
@@ -235,7 +244,7 @@ public class Query {
           fail = true;
         }
         results.close();
-        if(fail){
+        if (fail) {
           return "Failed to create user\n";
         }
       } catch (SQLException e) {
@@ -311,39 +320,101 @@ public class Query {
       int numberOfItineraries) {
     try {
       StringBuffer sb = new StringBuffer();
-      if(directFlight==true){
-        try{
-          searchStatement1.setInt(1,numberOfItineraries);
+      if (directFlight == true) {
+        try {
+          searchStatement1.setInt(1, numberOfItineraries);
           searchStatement1.setString(2, originCity);
           searchStatement1.setString(3, destinationCity);
+          searchStatement1.setInt(4, dayOfMonth);
 
-          ResultSet oneHopResults = searchStatement1.executeQuery();
+          ResultSet directResults = searchStatement1.executeQuery();
+          int i = 0;
+          while (directResults.next()) {
+            int result_fid = directResults.getInt("fid");
+            int result_dayOfMonth = directResults.getInt("day_of_month");
+            String result_carrierId = directResults.getString("carrier_id");
+            String result_flightNum = directResults.getString("flight_num");
+            String result_originCity = directResults.getString("origin_city");
+            String result_destCity = directResults.getString("dest_city");
+            int result_time = directResults.getInt("actual_time");
+            int result_capacity = directResults.getInt("capacity");
+            int result_price = directResults.getInt("price");
 
-          while (oneHopResults.next()) {
-            int result_dayOfMonth = oneHopResults.getInt("day_of_month");
-            String result_carrierId = oneHopResults.getString("carrier_id");
-            String result_flightNum = oneHopResults.getString("flight_num");
-            String result_originCity = oneHopResults.getString("origin_city");
-            String result_destCity = oneHopResults.getString("dest_city");
-            int result_time = oneHopResults.getInt("actual_time");
-            int result_capacity = oneHopResults.getInt("capacity");
-            int result_price = oneHopResults.getInt("price");
-  
-            sb.append("Day: " + result_dayOfMonth + " Carrier: " + result_carrierId + " Number: " + result_flightNum
-                + " Origin: " + result_originCity + " Destination: " + result_destCity + " Duration: " + result_time
-                + " Capacity: " + result_capacity + " Price: " + result_price + "\n");
+            sb.append("Itinerary " + (i++) + ": 1 flight(s), " + result_time + " minutes\n");
+            sb.append("ID: " + result_fid + " Day: " + result_dayOfMonth + " Carrier: " + result_carrierId + " Number: "
+                + result_flightNum + " Origin: " + result_originCity + " Dest: " + result_destCity
+                + " Duration: " + result_time + " Capacity: " + result_capacity + " Price: " + result_price + "\n");
           }
-          oneHopResults.close();
+          directResults.close();
 
-        } catch (SQLException e){
+        } catch (SQLException e) {
           e.printStackTrace();
         }
-        if(sb.length() == 0){
+        if (sb.length() == 0) {
           return "No flights match your selection\n";
         }
         return sb.toString();
       } else {
-        return null;
+        try {
+          searchStatement2.setInt(1, numberOfItineraries);
+          searchStatement2.setString(2, originCity);
+          searchStatement2.setString(3, destinationCity);
+          searchStatement2.setInt(4, dayOfMonth);
+          searchStatement2.setString(5, originCity);
+          searchStatement2.setString(6, destinationCity);
+          searchStatement2.setInt(7, dayOfMonth);
+          searchStatement2.setInt(8, dayOfMonth);
+
+          ResultSet oneHopResults = searchStatement2.executeQuery();
+
+          int i = 0;
+          while (oneHopResults.next()) {
+            int result_sum_time = oneHopResults.getInt("actual_time");
+            oneHopResults.getInt("fid2");
+            int result_flight_num = oneHopResults.wasNull() ? 1 : 2;
+            int result_fid1 = oneHopResults.getInt("fid1");
+            int result_dayOfMonth1 = oneHopResults.getInt("d_o_m1");
+            String result_carrierId1 = oneHopResults.getString("c_i1");
+            String result_flightNum1 = oneHopResults.getString("f_n1");
+            String result_originCity1 = oneHopResults.getString("o_c1");
+            String result_destCity1 = oneHopResults.getString("d_c1");
+            int result_time1 = oneHopResults.getInt("t1");
+            int result_capacity1 = oneHopResults.getInt("c1");
+            int result_price1 = oneHopResults.getInt("p1");
+
+            sb.append("Itinerary " + (i++) + ": " + result_flight_num + " flight(s), " + result_sum_time + " minutes\n");
+            sb.append("ID: " + result_fid1 + " Day: " + result_dayOfMonth1 + " Carrier: " + result_carrierId1
+                + " Number: " + result_flightNum1 + " Origin: " + result_originCity1 + " Dest: "
+                + result_destCity1 + " Duration: " + result_time1 + " Capacity: " + result_capacity1 + " Price: "
+                + result_price1 + "\n");
+
+            if (result_flight_num == 2) {
+              int result_fid2 = oneHopResults.getInt("fid2");
+              int result_dayOfMonth2 = oneHopResults.getInt("d_o_m2");
+              String result_carrierId2 = oneHopResults.getString("c_i2");
+              String result_flightNum2 = oneHopResults.getString("f_n2");
+              String result_originCity2 = oneHopResults.getString("o_c2");
+              String result_destCity2 = oneHopResults.getString("d_c2");
+              int result_time2 = oneHopResults.getInt("t2");
+              int result_capacity2 = oneHopResults.getInt("c2");
+              int result_price2 = oneHopResults.getInt("p2");
+
+              sb.append("ID: " + result_fid2 + " Day: " + result_dayOfMonth2 + " Carrier: " + result_carrierId2
+                + " Number: " + result_flightNum2 + " Origin: " + result_originCity2 + " Dest: "
+                + result_destCity2 + " Duration: " + result_time2 + " Capacity: " + result_capacity2 + " Price: "
+                + result_price2 + "\n");
+            }
+
+          }
+          oneHopResults.close();
+
+        } catch (SQLException e) {
+          e.printStackTrace();
+        }
+        if (sb.length() == 0) {
+          return "No flights match your selection\n";
+        }
+        return sb.toString();
       }
 
     } finally {
