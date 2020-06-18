@@ -23,6 +23,17 @@ public class TestUtils {
             st2.execute(rs.getString("query"));
           }
         }
+        
+        // Drop indexes
+        // try (ResultSet rs = st1.executeQuery(
+        //     " SELECT 'DROP INDEX ' + si.name + ' ON ' + so.name + ';' AS query FROM sys.indexes si " +
+        //     " JOIN sys.objects so ON si.object_id = so.object_id " +
+        //     " WHERE so.type = 'U'  " +
+        //     " AND si.type_desc = 'NONCLUSTERED' AND si.name IS NOT NULL;")) {
+        //   while (rs.next()) {
+        //     st2.execute(rs.getString("query"));
+        //   }
+        // }
 
         // Drop tables
         try (ResultSet rs = st1.executeQuery(" SELECT 'DROP TABLE ' + TABLE_NAME +';' AS query"

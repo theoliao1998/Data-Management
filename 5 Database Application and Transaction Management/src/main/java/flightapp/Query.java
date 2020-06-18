@@ -30,8 +30,23 @@ public class Query {
   // For table clearing
   private static final String CLEAR_SQL1 = "DELETE FROM RESERVATIONS";
   private static final String CLEAR_SQL2 = "DELETE FROM USERS";
+  private static final String DROP_INDEX_SQL1 = "DROP INDEX F_origin ON FLIGHTS";
+  private static final String DROP_INDEX_SQL2 = "DROP INDEX F_dest ON FLIGHTS";
+  private static final String DROP_INDEX_SQL3 = "DROP F_origin_dest ON FLIGHTS";
   private PreparedStatement tableClearStatement1;
   private PreparedStatement tableClearStatement2;
+  private PreparedStatement dropIndexStatement1;
+  private PreparedStatement dropIndexStatement2;
+  private PreparedStatement dropIndexStatement3;
+
+  // For login
+  private static final String CHECK_USER_SQL = "SELECT password, salt FROM USERS WHERE username = ?";
+  private PreparedStatement checkUserStatement;
+
+  // For create user
+  private static final String CREATE_USER_SQL = "INSERT INTO USERS (username, password, salt, balance) VALUES (?, ? , ? , ?)";
+  private PreparedStatement createUserStatement;
+
 
   // For search
   private static final String SearchSQL1 = "SELECT TOP ( ? )" 
@@ -118,11 +133,9 @@ public class Query {
    */
   public void clearTables() {
     try {
-      // String searchSQL = "SELECT password, salt FROM USERS " + "WHERE username = \'" + username + "\'";
-
+      
       tableClearStatement1.executeUpdate();
       tableClearStatement2.executeUpdate();
-      
 
     } catch (Exception e) {
       e.printStackTrace();
@@ -138,6 +151,11 @@ public class Query {
     tableClearStatement1 = conn.prepareStatement(CLEAR_SQL1);
     tableClearStatement2 = conn.prepareStatement(CLEAR_SQL2);
     searchStatement1 = conn.prepareStatement(SearchSQL1);
+    checkUserStatement = conn.prepareStatement(CHECK_USER_SQL);
+    createUserStatement = conn.prepareStatement(CREATE_USER_SQL);
+    dropIndexStatement1 = conn.prepareStatement(DROP_INDEX_SQL1);
+    dropIndexStatement2 = conn.prepareStatement(DROP_INDEX_SQL2);
+    dropIndexStatement3 = conn.prepareStatement(DROP_INDEX_SQL3);
     // TODO: YOUR CODE HERE
   }
 
@@ -158,10 +176,8 @@ public class Query {
         
       }
       try {
-        String searchSQL = "SELECT password, salt FROM USERS " + "WHERE username = \'" + username + "\'";
-
-        Statement searchStatement = conn.createStatement();
-        ResultSet results = searchStatement.executeQuery(searchSQL);
+        checkUserStatement.setString(1, username);
+        ResultSet results = checkUserStatement.executeQuery();
         byte[] hash = null;
         byte[] hash2 = null;
         byte[] salt = null;
@@ -212,10 +228,8 @@ public class Query {
 
       // check user name
       try {
-        String searchSQL = "SELECT * FROM USERS " + "WHERE username = \'" + username + "\'";
-
-        Statement searchStatement = conn.createStatement();
-        ResultSet results = searchStatement.executeQuery(searchSQL);
+        checkUserStatement.setString(1, username);
+        ResultSet results = checkUserStatement.executeQuery();
         boolean fail = false;
         while (results.next()) {
           fail = true;
@@ -245,13 +259,11 @@ public class Query {
         throw new IllegalStateException();
       }
       try {
-        String insertSQL = "INSERT INTO USERS (username, password, salt, balance) " + "VALUES (\'" + username
-            + "\', ? , ? , " + initAmount + ")";
-        PreparedStatement insertStatement = conn.prepareStatement(insertSQL);
-        insertStatement.setBytes(1, hash);
-        insertStatement.setBytes(2, salt);
-        insertStatement.executeUpdate();
-        insertStatement.close();
+        createUserStatement.setString(1, username);
+        createUserStatement.setBytes(2, hash);
+        createUserStatement.setBytes(3, salt);
+        createUserStatement.setInt(4, initAmount);
+        createUserStatement.executeUpdate();
         return String.format("Created user %s\n", username);
       } catch (SQLException e) {
         e.printStackTrace();
