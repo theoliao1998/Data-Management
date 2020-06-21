@@ -72,6 +72,10 @@ public class Query {
   private PreparedStatement findFidStatement;
 
   // For cancel
+  private static final String CHECK_REFUND_SQL = "select sum(f.price) as refund from FLIGHTS f, RESERVATIONS r where (f.fid = r.flight_id1 or f.fid = r.flight_id2) and r.reservation_id = ? and r.user_name = ? and r.isPaid = 1";
+  private PreparedStatement checkRefundStatement;
+  private static final String REFUND_SQL = "UPDATE USERS SET balance = balance + ? FROM USERS WHERE username = ?";
+  private PreparedStatement refundStatement;
   private static final String CANCEL_SQL = "delete from RESERVATIONS where reservation_id = ?";
   private PreparedStatement cancelStatement;
 
@@ -219,6 +223,8 @@ public class Query {
     reservationsStatement = conn.prepareStatement(RESERVATIONS_SQL);
     findFidStatement = conn.prepareStatement(FIND_FID_SQL);
     cancelStatement = conn.prepareStatement(CANCEL_SQL);
+    checkRefundStatement = conn.prepareStatement(CHECK_REFUND_SQL);
+    refundStatement = conn.prepareStatement(REFUND_SQL);
   }
 
   /**
@@ -563,7 +569,7 @@ public class Query {
               rs.close();
               conn.commit();
               conn.setAutoCommit(true);
-              identityFrom++;
+              identityFrom = reservationID - 1;
               return "Booked flight(s), reservation ID: " + reservationID + "\n";
             }
             conn.rollback();
@@ -751,9 +757,9 @@ public class Query {
               result_price = rs2.getInt("price");
               rs2.close();
 
-              sb.append("ID: " + fid2 + " Day: " + result_dayOfMonth + " Carrier: " + result_carrierId
-                  + " Number: " + result_flightNum + " Origin: " + result_originCity + " Dest: " + result_destCity
-                  + " Duration: " + result_time + " Capacity: " + result_capacity + " Price: " + result_price + "\n");
+              sb.append("ID: " + fid2 + " Day: " + result_dayOfMonth + " Carrier: " + result_carrierId + " Number: "
+                  + result_flightNum + " Origin: " + result_originCity + " Dest: " + result_destCity + " Duration: "
+                  + result_time + " Capacity: " + result_capacity + " Price: " + result_price + "\n");
             }
           }
 
@@ -800,19 +806,50 @@ public class Query {
    */
   public String transaction_cancel(int reservationId) {
     try {
-      if(!isLoggedIn){
+      if (!isLoggedIn) {
         return "Cannot cancel reservations, not logged in\n";
       }
-      try{
-        cancelStatement.clearParameters();
-        cancelStatement.setInt(1, reservationId);
-        int succeeded = cancelStatement.executeUpdate();
-        if(succeeded > 0){
-          return "Canceled reservation " + reservationId + "\n";
+      boolean deadlock = true;
+      while (deadlock) {
+        deadlock = false;
+        try {
+          conn.setAutoCommit(false);
+          checkRefundStatement.clearParameters();
+          checkRefundStatement.setInt(1, reservationId);
+          checkRefundStatement.setString(2, user_name);
+          ResultSet rs = checkRefundStatement.executeQuery();
+          rs.next();
+          int refund = rs.getInt("refund");
+          rs.close();
+          if(refund > 0){
+            refundStatement.clearParameters();
+            refundStatement.setInt(1, refund);
+            refundStatement.setString(2, user_name);
+            refundStatement.executeUpdate();
+          }
+          cancelStatement.clearParameters();
+          cancelStatement.setInt(1, reservationId);
+          int succeeded = cancelStatement.executeUpdate();
+          if (succeeded > 0) {
+            conn.commit();
+            conn.setAutoCommit(true);
+            return "Canceled reservation " + reservationId + "\n";
+          }
+          conn.commit();
+          conn.setAutoCommit(true);
+          return "Failed to cancel reservation " + reservationId + "\n";
+        } catch (SQLException e) {
+          deadlock = isDeadLock(e);
+          if(deadlock){
+            try{
+              conn.rollback();
+              conn.setAutoCommit(false);
+            } catch (SQLException ex){
+              ex.printStackTrace();
+            }
+          }
+          e.printStackTrace();
         }
-        return "Failed to cancel reservation " + reservationId + "\n";
-      } catch (SQLException e) {
-        e.printStackTrace();
       }
       return "Failed to cancel reservation " + reservationId + "\n";
     } finally {

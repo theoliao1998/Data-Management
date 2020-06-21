@@ -25,5 +25,7 @@ create table RESERVATIONS (reservation_id int IDENTITY(1,1) not null, -- IDENTIT
 -- CREATE INDEX R_fid1 on RESERVATIONS(flight_id1);
 -- CREATE INDEX R_fid2 on RESERVATIONS(flight_id2);
 -- CREATE INDEX R_c on RESERVATIONS(isCancelled);
+-- CREATE INDEX R_user on RESERVATIONS(user_name);
 
--- delete from RESERVATIONS where reservation_id = ?
+-- select sum(f.price) from FLIGHTS f, RESERVATIONS r where (f.fid = r.flight_id1 or f.fid = r.flight_id2) and 
+-- r.reservation_id = ? and r.user_name = ? and r.isPaid = 1
