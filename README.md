@@ -1,2 +1,2 @@
-# Introduction-to-Data-Management  
+# Data-Management  
 UW CSE344 + UM SI564
