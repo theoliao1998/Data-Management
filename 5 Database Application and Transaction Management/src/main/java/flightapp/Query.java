@@ -21,10 +21,6 @@ public class Query {
   private static final int HASH_STRENGTH = 65536;
   private static final int KEY_LENGTH = 128;
 
-  // Canned queries
-  private static final String CHECK_FLIGHT_CAPACITY = "SELECT capacity FROM Flights WHERE fid = ?";
-  private PreparedStatement checkFlightCapacityStatement;
-
   // For check dangling
   private static final String TRANCOUNT_SQL = "SELECT @@TRANCOUNT AS tran_count";
   private PreparedStatement tranCountStatement;
@@ -66,7 +62,7 @@ public class Query {
   private PreparedStatement setPaidStatement;
 
   // For reservations
-  private static final String RESERVATIONS_SQL = "select * from RESERVATIONS";
+  private static final String RESERVATIONS_SQL = "select * from RESERVATIONS where user_name = ?";
   private PreparedStatement reservationsStatement;
   private static final String FIND_FID_SQL = "select day_of_month,carrier_id,flight_num,origin_city,dest_city,actual_time,capacity,price from FLIGHTS where fid = ?";
   private PreparedStatement findFidStatement;
@@ -204,7 +200,6 @@ public class Query {
    * prepare all the SQL statements in this method.
    */
   private void prepareStatements() throws SQLException {
-    checkFlightCapacityStatement = conn.prepareStatement(CHECK_FLIGHT_CAPACITY);
     tranCountStatement = conn.prepareStatement(TRANCOUNT_SQL);
     tableClearStatement1 = conn.prepareStatement(CLEAR_SQL1);
     tableClearStatement2 = conn.prepareStatement(CLEAR_SQL2);
@@ -713,6 +708,8 @@ public class Query {
         deadlock = false;
         try {
           conn.setAutoCommit(false);
+          reservationsStatement.clearParameters();
+          reservationsStatement.setString(1, user_name);
           ResultSet rs = reservationsStatement.executeQuery();
           int i = 0;
           StringBuffer sb = new StringBuffer();
@@ -855,20 +852,6 @@ public class Query {
     } finally {
       checkDanglingTransaction();
     }
-  }
-
-  /**
-   * Example utility function that uses prepared statements
-   */
-  private int checkFlightCapacity(int fid) throws SQLException {
-    checkFlightCapacityStatement.clearParameters();
-    checkFlightCapacityStatement.setInt(1, fid);
-    ResultSet results = checkFlightCapacityStatement.executeQuery();
-    results.next();
-    int capacity = results.getInt("capacity");
-    results.close();
-
-    return capacity;
   }
 
   /**
