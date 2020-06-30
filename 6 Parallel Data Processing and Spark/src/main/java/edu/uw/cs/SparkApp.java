@@ -1,5 +1,6 @@
 package edu.uw.cs;
 
+import org.apache.hadoop.fs.shell.Count;
 import org.apache.log4j.*;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.sql.Dataset;
@@ -214,9 +215,12 @@ public class SparkApp {
      */
     public static JavaRDD<Row> Q3A(SparkSession spark, String dataFile) {
         Dataset<Row> d = spark.read().parquet(dataFile);
-
+        
         // TODO your code here
-        return null;
+        d.createOrReplaceTempView("flights");
+        Dataset<Row> r = spark.sql("SELECT DISTINCT destcityname FROM flights WHERE origincityname='Seattle, WA'");
+
+        return r.javaRDD();
     }
 
     /**
@@ -232,7 +236,9 @@ public class SparkApp {
         Dataset<Row> d = spark.read().parquet(dataFile);
 
         // TODO your code here
-        return null;
+        JavaRDD<Row> rdd = d.javaRDD();
+        Dataset<Row> r = d.filter("cancelled != 1").groupBy("origincityname","month").count();
+        return r.javaRDD();
     }
 
     /**
@@ -249,7 +255,9 @@ public class SparkApp {
         Dataset<Row> d = spark.read().parquet(dataFile);
 
         // TODO your code here
-        return null;
+        JavaRDD<Row> rdd = d.javaRDD();
+        Dataset<Row> r = d.filter("depdelay is not null").groupBy("origincityname").avg("depdelay");
+        return r.javaRDD();
     }
 
 }
