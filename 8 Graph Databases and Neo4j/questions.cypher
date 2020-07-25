@@ -93,7 +93,7 @@ ORDER BY area DESC
 // Add a comment comparing the runtime of this query to the runtime of question 9 in the previous homework 
 // and explaining the difference. [Result Size: 15 rows]
 MATCH (c1:Country), (c2:Country)
-WHERE (c1) <- [:locatedIn] - (:Sea) - [:locatedIn] -> (c2) 
+WHERE c1.name < c2.name
+AND (c1) <- [:locatedIn] - (:Sea) - [:locatedIn] -> (c2) 
 AND (c1) <- [:locatedIn] - (:Mountain) - [:locatedIn] -> (c2) 
-AND c1.name < c2.name
 RETURN c1.name AS first_country, c2.name AS second_country
