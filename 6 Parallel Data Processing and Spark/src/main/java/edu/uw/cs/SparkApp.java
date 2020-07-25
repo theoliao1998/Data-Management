@@ -255,7 +255,6 @@ public class SparkApp {
         Dataset<Row> d = spark.read().parquet(dataFile);
 
         // TODO your code here
-        JavaRDD<Row> rdd = d.javaRDD();
         Dataset<Row> r = d.filter("depdelay is not null").groupBy("origincityname").avg("depdelay");
         return r.javaRDD();
     }
